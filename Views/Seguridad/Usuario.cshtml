@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Usuario";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-md-10 col-lg-8 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h1 class="card-title text-center">Lista de usuarios</h1>
+                    <form>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">Usuario</a>
+                            <a href="#" class="list-group-item list-group-item-action">Usuario</a>
+                            <a href="#" class="list-group-item list-group-item-action">Usuario</a>
+                            <a href="#" class="list-group-item list-group-item-action">Usuario</a>
+                            <a href="#" class="list-group-item list-group-item-action">Usuario</a>
+                        </div>
+                        <br />
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Administrador">
+                            <label class="form-check-label" for="Administrador">
+                                Administrador
+                            </label>
+                        </div><div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Seguridad">
+                            <label class="form-check-label" for="Seguridad">
+                                Seguridad
+                            </label>
+                        </div><div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Mantenimiento">
+                            <label class="form-check-label" for="Mantenimiento">
+                                Mantenimiento
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="Consultas" checked>
+                            <label class="form-check-label" for="Consultas">
+                                Consultas
+                            </label>
+                        </div>
+                        <br />
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group">
+                                <button type="submit" class="btn btn-primary">Actualizar Roles</button>
+                            </div>
+                            <div class="btn-group me-2" role="group" aria-label="Second group">
+                                <div class="btn-group">
+                                    <button class="btn btn-primary" asp-area="" asp-controller="Seguridad" asp-action="CrearUsuario">Crear Usuario</button>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-primary" asp-area="" asp-controller="Seguridad" asp-action="AsignarRoles">Asignar Roles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

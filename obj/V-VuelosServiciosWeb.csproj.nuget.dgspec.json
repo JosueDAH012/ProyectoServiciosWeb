@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jucal\\source\\repos\\V-VuelosServiciosWeb\\V-VuelosServiciosWeb.csproj": {}
+    "D:\\Proyecto\\V-VuelosServiciosWeb\\V-VuelosServiciosWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jucal\\source\\repos\\V-VuelosServiciosWeb\\V-VuelosServiciosWeb.csproj": {
+    "D:\\Proyecto\\V-VuelosServiciosWeb\\V-VuelosServiciosWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jucal\\source\\repos\\V-VuelosServiciosWeb\\V-VuelosServiciosWeb.csproj",
+        "projectUniqueName": "D:\\Proyecto\\V-VuelosServiciosWeb\\V-VuelosServiciosWeb.csproj",
         "projectName": "V-VuelosServiciosWeb",
-        "projectPath": "C:\\Users\\jucal\\source\\repos\\V-VuelosServiciosWeb\\V-VuelosServiciosWeb.csproj",
-        "packagesPath": "C:\\Users\\jucal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jucal\\source\\repos\\V-VuelosServiciosWeb\\obj\\",
+        "projectPath": "D:\\Proyecto\\V-VuelosServiciosWeb\\V-VuelosServiciosWeb.csproj",
+        "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyecto\\V-VuelosServiciosWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jucal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -69,6 +67,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[3.1.13, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             },
             "Microsoft.jQuery.Unobtrusive.Ajax": {
               "target": "Package",
