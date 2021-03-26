@@ -18,12 +18,32 @@ namespace V_VuelosServiciosWeb.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Consecutivo()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult EditarConsecutivo()
+        {
+            return View();
+        }
+
+        public IActionResult NuevoConsecutivo()
+        {
+            return View();
+        }
+
+        public IActionResult Paises()
+        {
+            return View();
+        }
+
+        public IActionResult Aerolineas()
+        {
+            return View();
+        }
+
+        public IActionResult PuertasAeropuerto()
         {
             return View();
         }

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "LogSin";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h1 class="card-title text-center">Menu principal</h1>
+                    <form class="form-signin">
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" asp-area="Identity" asp-page="/Account/Login">Login</button>
+                        <hr class="my-4">
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" asp-area="Identity" asp-page="/Account/Register">SignUp</button>
+                        <hr class="my-4">
+                    </form>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">Cancelar</button>
+                            <hr class="my-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

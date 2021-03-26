@@ -23,6 +23,11 @@ namespace V_VuelosServiciosWeb.Controllers
             return View();
         }
 
+        public IActionResult CambiarPWD()
+        {
+            return View();
+        }
+
         public IActionResult AsignarRoles()
         {
             return View();
@@ -33,10 +38,6 @@ namespace V_VuelosServiciosWeb.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

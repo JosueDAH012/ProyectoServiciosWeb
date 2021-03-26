@@ -18,12 +18,27 @@ namespace V_VuelosServiciosWeb.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult AdminBitacora()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult AerolineasPais()
+        {
+            return View();
+        }
+
+        public IActionResult ConsultaBitacora()
+        {
+            return View();
+        }
+
+        public IActionResult ErroresV()
+        {
+            return View();
+        }
+
+        public IActionResult PuertasActivas()
         {
             return View();
         }

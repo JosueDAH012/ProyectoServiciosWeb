@@ -23,6 +23,11 @@ namespace V_VuelosServiciosWeb.Controllers
             return View();
         }
 
+        public IActionResult LogSin()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

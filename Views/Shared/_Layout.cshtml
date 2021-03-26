@@ -30,7 +30,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" asp-area="" asp-controller="Seguridad" asp-action="Usuario">Usuario</a>
-                                    <a class="dropdown-item" href="{{ url_for('hogar') }}">Cambiar contraseña</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Seguridad" asp-action="CambiarPWD">Cambiar contraseña</a>
                                 </div>
                                 <!--dropdown Administracion -->
                             <li class="nav-item dropdown">
@@ -39,10 +39,10 @@
                                     Administracion
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url_for('procesadores') }}">Consecutivos</a>
-                                    <a class="dropdown-item" href="{{ url_for('motherboard') }}">Paises</a>
-                                    <a class="dropdown-item" href="{{ url_for('ram') }}">Aerolineas</a>
-                                    <a class="dropdown-item" href="{{ url_for('tarjetavideo') }}">Puertas del aeropuerto</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Administracion" asp-action="Consecutivo">Consecutivos</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Administracion" asp-action="Paises">Paises</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Administracion" asp-action="Aerolineas">Aerolineas</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Administracion" asp-action="PuertasAeropuerto">Puertas del aeropuerto</a>
                                 </div>
                                 <!--dropdown Consultas -->
                             <li class="nav-item dropdown">
@@ -51,10 +51,10 @@
                                     Consultas
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url_for('teclados') }}">Bitacora</a>
-                                    <a class="dropdown-item" href="{{ url_for('mouse') }}">Errores</a>
-                                    <a class="dropdown-item" href="{{ url_for('mousepad') }}">Aerolineas</a>
-                                    <a class="dropdown-item" href="{{ url_for('controles') }}">Puertas</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Consulta" asp-action="ConsultaBitacora">Bitacora</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Consulta" asp-action="ErroresV">Errores</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Consulta" asp-action="AerolineasPais">Aerolineas</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Consulta" asp-action="PuertasActivas">Puertas</a>
                                 </div>
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
