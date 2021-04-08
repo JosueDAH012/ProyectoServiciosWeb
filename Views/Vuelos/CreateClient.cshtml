@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("~/Views/Shared/_HeaderLoginClient.cshtml")
+
+<div class="containerNew">
+    @using (Html.BeginForm("IngresarDatos", "vuelos", FormMethod.Post))
+    {
+        <label for="User"><b>NAME</b></label>
+        <input type="text" placeholder="Enter Name" name="Name" required>
+
+        <label for="User"><b>FIRST LAST NAME</b></label>
+        <input type="text" placeholder="Enter Last Name" name="lastname1" required>
+
+        <label for="User"><b>SECOND LAST NAME</b></label>
+        <input type="text" placeholder="Enter Last Name" name="lastname2" required>
+
+        <label for="User"><b>USERNAME</b></label>
+        <input type="text" placeholder="Enter Username" name="User" required>
+
+        <label for="Pass"><b>PASSWORD</b></label>
+        <input type="password" placeholder="Enter Password" name="Pass" required>
+
+        <label for="Email"><b>EMAIL</b></label>
+        <input type="text" placeholder="Enter Email" name="Email" required>
+
+        <button class="button btn" type="submit">Ingresar</button>
+    }
+</div>

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Usuario";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h1 class="card-title text-center">Usuarios</h1>
+                    <form class="form-signin">
+                        <button class="btn btn-primary" asp-area="" asp-controller="Seguridad" asp-action="CrearUsuario">Crear Usuario</button>
+                        <hr class="my-4">
+                        <button class="btn btn-primary" asp-area="" asp-controller="Seguridad" asp-action="AsignarRoles">Asignar Roles</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
