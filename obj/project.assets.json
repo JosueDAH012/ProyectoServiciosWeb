@@ -9565,11 +9565,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Users\\jucal\\Documents\\GitHub\\ProyectoServiciosWeb\\V-VuelosServiciosWeb.csproj",
+      "projectUniqueName": "I:\\Proyecto\\ProyectoServiciosWeb\\V-VuelosServiciosWeb.csproj",
       "projectName": "V-VuelosServiciosWeb",
-      "projectPath": "F:\\Users\\jucal\\Documents\\GitHub\\ProyectoServiciosWeb\\V-VuelosServiciosWeb.csproj",
+      "projectPath": "I:\\Proyecto\\ProyectoServiciosWeb\\V-VuelosServiciosWeb.csproj",
       "packagesPath": "C:\\Users\\jucal\\.nuget\\packages\\",
-      "outputPath": "F:\\Users\\jucal\\Documents\\GitHub\\ProyectoServiciosWeb\\obj\\",
+      "outputPath": "I:\\Proyecto\\ProyectoServiciosWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

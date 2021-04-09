@@ -20,6 +20,7 @@ namespace V_VuelosServiciosWeb.Controllers
 
         public IActionResult Consecutivo()
         {
+
             return View();
         }
 
@@ -29,6 +30,11 @@ namespace V_VuelosServiciosWeb.Controllers
         }
 
         public IActionResult NuevoConsecutivo()
+        {
+            return View();
+        }
+
+        public IActionResult InfoConAero()
         {
             return View();
         }
