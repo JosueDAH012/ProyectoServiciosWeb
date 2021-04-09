@@ -7,12 +7,14 @@ using System.Web;
 
 namespace V_VuelosServiciosWeb.Controllers
 {
-    public class loginController : Controller
+    public class ComprarBoletoController : Controller
     {
-        // GET: login
-        public ActionResult Login()
+        // GET: ComprarBoleto
+        public ActionResult Index()
         {
             return View();
         }
+
+
     }
 }
