@@ -1,25 +1,15 @@
-﻿using Newtonsoft.Json;
-using V_VuelosServiciosWeb.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Web;
-using Microsoft.AspNetCore.Mvc;
 
 namespace V_VuelosServiciosWeb.Controllers
 {
     public class ErroresController : Controller
     {
+        /*
         string url = "http://localhost:53588/";
-        // GET: Errores
-        public ActionResult ReportesErrores()
-        {
-            return View();
-        }
 
 
         public ActionResult IngresarErrores(string date, string message)
@@ -51,6 +41,7 @@ namespace V_VuelosServiciosWeb.Controllers
                     return false;
                 }
             }
-        }
+
+        */
     }
 }

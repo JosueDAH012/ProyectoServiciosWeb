@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-
+using System.Threading.Tasks;
 
 namespace V_VuelosServiciosWeb.Models
 {
@@ -15,6 +14,5 @@ namespace V_VuelosServiciosWeb.Models
         public string TIPO_BITACORA { get; set; }
         public string DESCRIPCION_BITACORA { get; set; }
         public string DETALLE_BITACORA { get; set; }
-
     }
 }

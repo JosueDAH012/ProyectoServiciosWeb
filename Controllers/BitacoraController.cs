@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using V_VuelosServiciosWeb.Models;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,20 +8,16 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
-using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using V_VuelosServiciosWeb.Models;
 
 namespace V_VuelosServiciosWeb.Controllers
 {
     public class BitacoraController : Controller
     {
         string url = "http://localhost:53588/";
-        // GET: Bitacora
-        public ActionResult Index()
-        {
-            return View();
-        }
 
-        public ActionResult IngresarBitacora(string USUARIO_BITACORA, string FECHA_BITACORA, string CODIGO_BITACORA , string TIPO_BITACORA,
+        public ActionResult IngresarBitacora(string USUARIO_BITACORA, string FECHA_BITACORA, string CODIGO_BITACORA, string TIPO_BITACORA,
             string DESCRIPCION_BITACORA, string DETALLE_BITACORA)
         {
             Bitacora bitacora = new Bitacora();
@@ -53,7 +49,7 @@ namespace V_VuelosServiciosWeb.Controllers
                 }
                 else
                 {
-                   return false;
+                    return false;
                 }
             }
         }
