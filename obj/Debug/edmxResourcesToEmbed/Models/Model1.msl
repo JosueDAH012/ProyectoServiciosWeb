@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatebaseVuelosModelStoreContainer" CdmEntityContainer="DatebaseVuelosEntities">
+    <EntitySetMapping Name="AEROLINEA">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.AEROLINEA">
+        <MappingFragment StoreEntitySet="AEROLINEA">
+          <ScalarProperty Name="ID_AEROLINEA" ColumnName="ID_AEROLINEA" />
+          <ScalarProperty Name="NOMBRE_AEROLINEA" ColumnName="NOMBRE_AEROLINEA" />
+          <ScalarProperty Name="ID_IMAGEN_AEROLINEAFK" ColumnName="ID_IMAGEN_AEROLINEAFK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BITACORA">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.BITACORA">
+        <MappingFragment StoreEntitySet="BITACORA">
+          <ScalarProperty Name="ID_BITACORA" ColumnName="ID_BITACORA" />
+          <ScalarProperty Name="USUARIO_BITACORA" ColumnName="USUARIO_BITACORA" />
+          <ScalarProperty Name="FECHA_BITACORA" ColumnName="FECHA_BITACORA" />
+          <ScalarProperty Name="CODIGO_BITACORA" ColumnName="CODIGO_BITACORA" />
+          <ScalarProperty Name="TIPO_BITACORA" ColumnName="TIPO_BITACORA" />
+          <ScalarProperty Name="DESCRIPCION_BITACORA" ColumnName="DESCRIPCION_BITACORA" />
+          <ScalarProperty Name="DETALLE_BITACORA" ColumnName="DETALLE_BITACORA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTE">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.CLIENTE">
+        <MappingFragment StoreEntitySet="CLIENTE">
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE_CLIENTE" />
+          <ScalarProperty Name="PRIMER_APELLIDO_CLIENTE" ColumnName="PRIMER_APELLIDO_CLIENTE" />
+          <ScalarProperty Name="SEGUNDO_APELLIDO_CLIENTE" ColumnName="SEGUNDO_APELLIDO_CLIENTE" />
+          <ScalarProperty Name="EMAIL_CLIENTE" ColumnName="EMAIL_CLIENTE" />
+          <ScalarProperty Name="USERNAME_CLIENTE" ColumnName="USERNAME_CLIENTE" />
+          <ScalarProperty Name="CLAVE_CLIENTE" ColumnName="CLAVE_CLIENTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPRAR_BOLETO">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.COMPRAR_BOLETO">
+        <MappingFragment StoreEntitySet="COMPRAR_BOLETO">
+          <ScalarProperty Name="ID_BOLETO" ColumnName="ID_BOLETO" />
+          <ScalarProperty Name="ID_CLIENTEFK" ColumnName="ID_CLIENTEFK" />
+          <ScalarProperty Name="FECHA_COMPRAR_BOLETO" ColumnName="FECHA_COMPRAR_BOLETO" />
+          <ScalarProperty Name="PAGO_COMPRAR_BOLETO" ColumnName="PAGO_COMPRAR_BOLETO" />
+          <ScalarProperty Name="MONTO_COMPRAR_BOLETO" ColumnName="MONTO_COMPRAR_BOLETO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONSECUTIVO_AEROLINEA">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.CONSECUTIVO_AEROLINEA">
+        <MappingFragment StoreEntitySet="CONSECUTIVO_AEROLINEA">
+          <ScalarProperty Name="ID_CONSECUTIVO_AEROLINEA" ColumnName="ID_CONSECUTIVO_AEROLINEA" />
+          <ScalarProperty Name="CONSECUTIVO_AEROLINEA1" ColumnName="CONSECUTIVO_AEROLINEA1" />
+          <ScalarProperty Name="PREFIJO_AEROLINEA" ColumnName="PREFIJO_AEROLINEA" />
+          <ScalarProperty Name="RANGO_INICIAL_AEROLINEA" ColumnName="RANGO_INICIAL_AEROLINEA" />
+          <ScalarProperty Name="RANGO_FINAL_AEROLINEA" ColumnName="RANGO_FINAL_AEROLINEA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONSECUTIVO_PAIS">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.CONSECUTIVO_PAIS">
+        <MappingFragment StoreEntitySet="CONSECUTIVO_PAIS">
+          <ScalarProperty Name="ID_CONSECUTIVO_PAIS" ColumnName="ID_CONSECUTIVO_PAIS" />
+          <ScalarProperty Name="CONSECUTIVO_PAIS1" ColumnName="CONSECUTIVO_PAIS1" />
+          <ScalarProperty Name="PREFIJO_PAIS" ColumnName="PREFIJO_PAIS" />
+          <ScalarProperty Name="RANGO_INICIAL_PAIS" ColumnName="RANGO_INICIAL_PAIS" />
+          <ScalarProperty Name="RANGO_FINAL_PAIS" ColumnName="RANGO_FINAL_PAIS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONSECUTIVO_PUERTA">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.CONSECUTIVO_PUERTA">
+        <MappingFragment StoreEntitySet="CONSECUTIVO_PUERTA">
+          <ScalarProperty Name="ID_CONSECUTIVO_PUERTA" ColumnName="ID_CONSECUTIVO_PUERTA" />
+          <ScalarProperty Name="CONSECUTIVO_PUERTA1" ColumnName="CONSECUTIVO_PUERTA1" />
+          <ScalarProperty Name="PREFIJO_PUERTA" ColumnName="PREFIJO_PUERTA" />
+          <ScalarProperty Name="RANGO_INICIAL_PUERTA" ColumnName="RANGO_INICIAL_PUERTA" />
+          <ScalarProperty Name="RANGO_FINAL_PUERTA" ColumnName="RANGO_FINAL_PUERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONSECUTIVO_VUELO">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.CONSECUTIVO_VUELO">
+        <MappingFragment StoreEntitySet="CONSECUTIVO_VUELO">
+          <ScalarProperty Name="ID_CONSECUTIVO_VUELO" ColumnName="ID_CONSECUTIVO_VUELO" />
+          <ScalarProperty Name="CONSECUTIVO_VUELO1" ColumnName="CONSECUTIVO_VUELO1" />
+          <ScalarProperty Name="PREFIJO_VUELO" ColumnName="PREFIJO_VUELO" />
+          <ScalarProperty Name="RANGO_INICIAL_VUELO" ColumnName="RANGO_INICIAL_VUELO" />
+          <ScalarProperty Name="RANGO_FINAL_VUELO" ColumnName="RANGO_FINAL_VUELO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ERROR">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.ERROR">
+        <MappingFragment StoreEntitySet="ERROR">
+          <ScalarProperty Name="ID_ERROR" ColumnName="ID_ERROR" />
+          <ScalarProperty Name="FECHA_ERROR" ColumnName="FECHA_ERROR" />
+          <ScalarProperty Name="MENSAJE_ERROR" ColumnName="MENSAJE_ERROR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGEN_AEROLINEA">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.IMAGEN_AEROLINEA">
+        <MappingFragment StoreEntitySet="IMAGEN_AEROLINEA">
+          <ScalarProperty Name="ID_IMAGEN_AEROLINEA" ColumnName="ID_IMAGEN_AEROLINEA" />
+          <ScalarProperty Name="IMAGEN_AEROLINEA1" ColumnName="IMAGEN_AEROLINEA1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMAGEN_PAIS">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.IMAGEN_PAIS">
+        <MappingFragment StoreEntitySet="IMAGEN_PAIS">
+          <ScalarProperty Name="ID_IMAGEN_PAIS" ColumnName="ID_IMAGEN_PAIS" />
+          <ScalarProperty Name="IMAGEN_PAIS1" ColumnName="IMAGEN_PAIS1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAIS">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.PAIS">
+        <MappingFragment StoreEntitySet="PAIS">
+          <ScalarProperty Name="ID_PAIS" ColumnName="ID_PAIS" />
+          <ScalarProperty Name="NOMBRE_PAIS" ColumnName="NOMBRE_PAIS" />
+          <ScalarProperty Name="ID_IMAGEN_PAISFK" ColumnName="ID_IMAGEN_PAISFK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PUERTA">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.PUERTA">
+        <MappingFragment StoreEntitySet="PUERTA">
+          <ScalarProperty Name="ID_PUERTA" ColumnName="ID_PUERTA" />
+          <ScalarProperty Name="NUMERO_PUERTA" ColumnName="NUMERO_PUERTA" />
+          <ScalarProperty Name="DETALLE_PUERTA" ColumnName="DETALLE_PUERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESERVAR_BOLETO">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.RESERVAR_BOLETO">
+        <MappingFragment StoreEntitySet="RESERVAR_BOLETO">
+          <ScalarProperty Name="ID_RESERVAR_BOLETO" ColumnName="ID_RESERVAR_BOLETO" />
+          <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
+          <ScalarProperty Name="CANTIDAD_RESERVAR_BOLETOS" ColumnName="CANTIDAD_RESERVAR_BOLETOS" />
+          <ScalarProperty Name="TOTAL_RESERVAR_BOLETO" ColumnName="TOTAL_RESERVAR_BOLETO" />
+          <ScalarProperty Name="ID_CLIENTEFK" ColumnName="ID_CLIENTEFK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROL">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.ROL">
+        <MappingFragment StoreEntitySet="ROL">
+          <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
+          <ScalarProperty Name="TIPO_ROL" ColumnName="TIPO_ROL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TARJETA">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.TARJETA">
+        <MappingFragment StoreEntitySet="TARJETA">
+          <ScalarProperty Name="ID_TARJETA" ColumnName="ID_TARJETA" />
+          <ScalarProperty Name="MES_TARJETA" ColumnName="MES_TARJETA" />
+          <ScalarProperty Name="YEAR_TARJETA" ColumnName="YEAR_TARJETA" />
+          <ScalarProperty Name="CVV_TARJETA" ColumnName="CVV_TARJETA" />
+          <ScalarProperty Name="TIPO_TARJETA" ColumnName="TIPO_TARJETA" />
+          <ScalarProperty Name="ID_CLIENTEFK" ColumnName="ID_CLIENTEFK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+          <ScalarProperty Name="CLAVE_USUARIO" ColumnName="CLAVE_USUARIO" />
+          <ScalarProperty Name="EMAIL_USUARIO" ColumnName="EMAIL_USUARIO" />
+          <ScalarProperty Name="PREGUNTA_SEGURIDAD_USUARIO" ColumnName="PREGUNTA_SEGURIDAD_USUARIO" />
+          <ScalarProperty Name="RESPUESTA_SEGURIDAD_USUARIO" ColumnName="RESPUESTA_SEGURIDAD_USUARIO" />
+          <ScalarProperty Name="ID_ROLFK" ColumnName="ID_ROLFK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VUELO_LLEGADA">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.VUELO_LLEGADA">
+        <MappingFragment StoreEntitySet="VUELO_LLEGADA">
+          <ScalarProperty Name="ID_VUELO_LLEGADA" ColumnName="ID_VUELO_LLEGADA" />
+          <ScalarProperty Name="ID_AEROLINEAFK" ColumnName="ID_AEROLINEAFK" />
+          <ScalarProperty Name="PROCEDENCIA_VUELO_LLEGADA" ColumnName="PROCEDENCIA_VUELO_LLEGADA" />
+          <ScalarProperty Name="FECHA_VUELO_LLEGADA" ColumnName="FECHA_VUELO_LLEGADA" />
+          <ScalarProperty Name="HORA_VUELO_LLEGADA" ColumnName="HORA_VUELO_LLEGADA" />
+          <ScalarProperty Name="ID_PUERTAFK" ColumnName="ID_PUERTAFK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VUELO_SALIDA">
+      <EntityTypeMapping TypeName="DatebaseVuelosModel.VUELO_SALIDA">
+        <MappingFragment StoreEntitySet="VUELO_SALIDA">
+          <ScalarProperty Name="ID_VUELO_SALIDA" ColumnName="ID_VUELO_SALIDA" />
+          <ScalarProperty Name="ID_AEROLINEAFK" ColumnName="ID_AEROLINEAFK" />
+          <ScalarProperty Name="DESTINO_VUELO_SALIDA" ColumnName="DESTINO_VUELO_SALIDA" />
+          <ScalarProperty Name="FECHA_VUELO_SALIDA" ColumnName="FECHA_VUELO_SALIDA" />
+          <ScalarProperty Name="HORA_VUELO_SALIDA" ColumnName="HORA_VUELO_SALIDA" />
+          <ScalarProperty Name="ID_PUERTAFK" ColumnName="ID_PUERTAFK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

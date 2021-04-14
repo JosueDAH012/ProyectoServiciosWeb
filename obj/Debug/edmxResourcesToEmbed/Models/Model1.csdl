@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatebaseVuelosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AEROLINEA">
+    <Key>
+      <PropertyRef Name="ID_AEROLINEA" />
+    </Key>
+    <Property Name="ID_AEROLINEA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRE_AEROLINEA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_IMAGEN_AEROLINEAFK" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BITACORA">
+    <Key>
+      <PropertyRef Name="ID_BITACORA" />
+    </Key>
+    <Property Name="ID_BITACORA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USUARIO_BITACORA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_BITACORA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CODIGO_BITACORA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TIPO_BITACORA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION_BITACORA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DETALLE_BITACORA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CLIENTE">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PRIMER_APELLIDO_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SEGUNDO_APELLIDO_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="USERNAME_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CLAVE_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="COMPRAR_BOLETO">
+    <Key>
+      <PropertyRef Name="ID_BOLETO" />
+    </Key>
+    <Property Name="ID_BOLETO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_CLIENTEFK" Type="Int32" />
+    <Property Name="FECHA_COMPRAR_BOLETO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PAGO_COMPRAR_BOLETO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MONTO_COMPRAR_BOLETO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CONSECUTIVO_AEROLINEA">
+    <Key>
+      <PropertyRef Name="ID_CONSECUTIVO_AEROLINEA" />
+    </Key>
+    <Property Name="ID_CONSECUTIVO_AEROLINEA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONSECUTIVO_AEROLINEA1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PREFIJO_AEROLINEA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="RANGO_INICIAL_AEROLINEA" Type="Int32" />
+    <Property Name="RANGO_FINAL_AEROLINEA" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CONSECUTIVO_PAIS">
+    <Key>
+      <PropertyRef Name="ID_CONSECUTIVO_PAIS" />
+    </Key>
+    <Property Name="ID_CONSECUTIVO_PAIS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONSECUTIVO_PAIS1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PREFIJO_PAIS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="RANGO_INICIAL_PAIS" Type="Int32" />
+    <Property Name="RANGO_FINAL_PAIS" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CONSECUTIVO_PUERTA">
+    <Key>
+      <PropertyRef Name="ID_CONSECUTIVO_PUERTA" />
+    </Key>
+    <Property Name="ID_CONSECUTIVO_PUERTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONSECUTIVO_PUERTA1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PREFIJO_PUERTA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="RANGO_INICIAL_PUERTA" Type="Int32" />
+    <Property Name="RANGO_FINAL_PUERTA" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CONSECUTIVO_VUELO">
+    <Key>
+      <PropertyRef Name="ID_CONSECUTIVO_VUELO" />
+    </Key>
+    <Property Name="ID_CONSECUTIVO_VUELO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONSECUTIVO_VUELO1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PREFIJO_VUELO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="RANGO_INICIAL_VUELO" Type="Int32" />
+    <Property Name="RANGO_FINAL_VUELO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ERROR">
+    <Key>
+      <PropertyRef Name="ID_ERROR" />
+    </Key>
+    <Property Name="ID_ERROR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA_ERROR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MENSAJE_ERROR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="IMAGEN_AEROLINEA">
+    <Key>
+      <PropertyRef Name="ID_IMAGEN_AEROLINEA" />
+    </Key>
+    <Property Name="ID_IMAGEN_AEROLINEA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IMAGEN_AEROLINEA1" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="IMAGEN_PAIS">
+    <Key>
+      <PropertyRef Name="ID_IMAGEN_PAIS" />
+    </Key>
+    <Property Name="ID_IMAGEN_PAIS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IMAGEN_PAIS1" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PAIS">
+    <Key>
+      <PropertyRef Name="ID_PAIS" />
+    </Key>
+    <Property Name="ID_PAIS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NOMBRE_PAIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_IMAGEN_PAISFK" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PUERTA">
+    <Key>
+      <PropertyRef Name="ID_PUERTA" />
+    </Key>
+    <Property Name="ID_PUERTA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NUMERO_PUERTA" Type="Int32" />
+    <Property Name="DETALLE_PUERTA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RESERVAR_BOLETO">
+    <Key>
+      <PropertyRef Name="ID_RESERVAR_BOLETO" />
+    </Key>
+    <Property Name="ID_RESERVAR_BOLETO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BOOKING_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CANTIDAD_RESERVAR_BOLETOS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TOTAL_RESERVAR_BOLETO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ID_CLIENTEFK" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ROL">
+    <Key>
+      <PropertyRef Name="ID_ROL" />
+    </Key>
+    <Property Name="ID_ROL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIPO_ROL" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TARJETA">
+    <Key>
+      <PropertyRef Name="ID_TARJETA" />
+    </Key>
+    <Property Name="ID_TARJETA" Type="Int32" Nullable="false" />
+    <Property Name="MES_TARJETA" Type="Int32" />
+    <Property Name="YEAR_TARJETA" Type="Int32" />
+    <Property Name="CVV_TARJETA" Type="Int32" />
+    <Property Name="TIPO_TARJETA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ID_CLIENTEFK" Type="Int32" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CLAVE_USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PREGUNTA_SEGURIDAD_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RESPUESTA_SEGURIDAD_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_ROLFK" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VUELO_LLEGADA">
+    <Key>
+      <PropertyRef Name="ID_VUELO_LLEGADA" />
+    </Key>
+    <Property Name="ID_VUELO_LLEGADA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_AEROLINEAFK" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PROCEDENCIA_VUELO_LLEGADA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_VUELO_LLEGADA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="HORA_VUELO_LLEGADA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ID_PUERTAFK" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VUELO_SALIDA">
+    <Key>
+      <PropertyRef Name="ID_VUELO_SALIDA" />
+    </Key>
+    <Property Name="ID_VUELO_SALIDA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_AEROLINEAFK" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DESTINO_VUELO_SALIDA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_VUELO_SALIDA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="HORA_VUELO_SALIDA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ID_PUERTAFK" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DatebaseVuelosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AEROLINEA" EntityType="Self.AEROLINEA" />
+    <EntitySet Name="BITACORA" EntityType="Self.BITACORA" />
+    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+    <EntitySet Name="COMPRAR_BOLETO" EntityType="Self.COMPRAR_BOLETO" />
+    <EntitySet Name="CONSECUTIVO_AEROLINEA" EntityType="Self.CONSECUTIVO_AEROLINEA" />
+    <EntitySet Name="CONSECUTIVO_PAIS" EntityType="Self.CONSECUTIVO_PAIS" />
+    <EntitySet Name="CONSECUTIVO_PUERTA" EntityType="Self.CONSECUTIVO_PUERTA" />
+    <EntitySet Name="CONSECUTIVO_VUELO" EntityType="Self.CONSECUTIVO_VUELO" />
+    <EntitySet Name="ERROR" EntityType="Self.ERROR" />
+    <EntitySet Name="IMAGEN_AEROLINEA" EntityType="Self.IMAGEN_AEROLINEA" />
+    <EntitySet Name="IMAGEN_PAIS" EntityType="Self.IMAGEN_PAIS" />
+    <EntitySet Name="PAIS" EntityType="Self.PAIS" />
+    <EntitySet Name="PUERTA" EntityType="Self.PUERTA" />
+    <EntitySet Name="RESERVAR_BOLETO" EntityType="Self.RESERVAR_BOLETO" />
+    <EntitySet Name="ROL" EntityType="Self.ROL" />
+    <EntitySet Name="TARJETA" EntityType="Self.TARJETA" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+    <EntitySet Name="VUELO_LLEGADA" EntityType="Self.VUELO_LLEGADA" />
+    <EntitySet Name="VUELO_SALIDA" EntityType="Self.VUELO_SALIDA" />
+  </EntityContainer>
+</Schema>
