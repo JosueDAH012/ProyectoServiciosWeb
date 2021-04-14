@@ -527,10 +527,37 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Admin\AsignarRol.cshtml" />
     <Content Include="Views\Admin\CambiarPwd.cshtml" />
+    <Content Include="Views\Admin\ConsecutivoAdmi.cshtml" />
+    <Content Include="Views\Admin\ConsecutivoAerolineas.cshtml" />
+    <Content Include="Views\Admin\ConsecutivoEditar.cshtml" />
+    <Content Include="Views\Admin\ConsecutivoNuevo.cshtml" />
+    <Content Include="Views\Admin\ConsecutivoPaises.cshtml" />
+    <Content Include="Views\Admin\ConsecutivoPuertas.cshtml" />
+    <Content Include="Views\Admin\ConsultaAerolineasPorPais.cshtml" />
+    <Content Include="Views\Admin\ConsultaPuertasActivas.cshtml" />
+    <Content Include="Views\Admin\ConsultaBitacora.cshtml" />
+    <Content Include="Views\Admin\CrearUsuario.cshtml" />
+    <Content Include="Views\Admin\CrearUsuarioAdmi.cshtml" />
+    <Content Include="Views\Admin\ConsultaErrores.cshtml" />
+    <Content Include="Views\Admin\LogIn.cshtml" />
+    <Content Include="Views\Admin\PaginaPrincipal.cshtml" />
+    <Content Include="Views\Shared\LayoutAdmiLogin.cshtml" />
+    <Content Include="Views\Shared\LayoutAdmi.cshtml" />
+    <Content Include="Views\Client\CompraBoletos.cshtml" />
+    <Content Include="Views\Client\CompraTarjeta.cshtml" />
+    <Content Include="Views\Client\CrearUsuarioCliente.cshtml" />
+    <Content Include="Views\Client\EasyPay.cshtml" />
+    <Content Include="Views\Client\LlegadaVuelos.cshtml" />
+    <Content Include="Views\Client\LogInCliente.cshtml" />
+    <Content Include="Views\Client\ReservarBoletos.cshtml" />
+    <Content Include="Views\Client\RestablecerContrasenaCliente.cshtml" />
+    <Content Include="Views\Client\SalidaVuelos.cshtml" />
+    <Content Include="Views\Shared\LayoutApi.cshtml" />
+    <Content Include="Views\Shared\LayoutCliente.cshtml" />
+    <Content Include="Views\Shared\LayoutClienteLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Client\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "ReservarBoletos";
+}
+
+<div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');height: 100vh; ">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-md-10 col-lg-8 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">Reserva de boletos</h1>
+                        <form>
+                            <div class="form-group row">
+                                <label for="username" class="col-sm-5 col-form-label">Seleccione su destino</label>
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Seleccione su destino
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Panama</a>
+                                        <a class="dropdown-item" href="#">Peru</a>
+                                        <a class="dropdown-item" href="#">España</a>
+                                        <a class="dropdown-item" href="#">Brasil</a>
+                                        <a class="dropdown-item" href="#">Francia</a>
+                                        <a class="dropdown-item" href="#">Estados Unidos</a>
+                                        <a class="dropdown-item" href="#">China</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="username" class="col-sm-5 col-form-label">¿Cuantos boletos desea comprar?</label>
+                                <input type="number" id="TotalBoletos" placeholder="Boletos a comprar">
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Total:</label>
+                                <div class="col-sm-4">
+                                    <label></label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Reservar</button>
+                                    <button type="submit" class="btn btn-primary">Atras</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

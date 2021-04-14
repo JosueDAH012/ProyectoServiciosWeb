@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "ConsecutivoEditar";
+}
+
+<div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');height: 100vh; ">
+
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h1 class="card-title text-center">Consecutivo Editar</h1>
+                    <form class="form-signin">
+                        <label for="Descripcion" id="LblDescripcion">Descripcion</label>
+                        <input type="text" id="Descripcion">
+                        <br />
+                        <label for="Consecutivo" id="LblConsecutivo">Consecutivo</label>
+                        <input type="text" id="Consecutivo">
+                        <br />
+                        <label for="Prefijo" id="LblPrefijo">Posee prefijo:</label>
+                        <input type="checkbox" id="CheckPrefijo">
+                        <br />
+                        <label for="Prefijo" id="LblPrefijo">Prefijo</label>
+                        <input type="text" id="Prefijo">
+                        <br />
+                        <label for="Rango" id="LblRango">Posee Rango</label>
+                        <input type="checkbox" id="CheckRango">
+                        <br />
+                        <label for="Rango" id="LblRangoInicial">Rango inicial</label>
+                        <input type="text" id="RangoInicial">
+                        <br />
+                        <label for="Rango" id="LblRangoFinal">Rango final</label>
+                        <input type="text" id="RangoFinal">
+
+                        <br />
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Aceptar</button>
+                            <button type="submit" class="btn btn-primary">Borrar</button>
+                            <button type="submit" class="btn btn-primary">Regresar</button>
+                            <hr class="my-4">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
