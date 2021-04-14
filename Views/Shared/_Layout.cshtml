@@ -19,6 +19,7 @@
                             aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+<<<<<<< Updated upstream
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
@@ -79,6 +80,40 @@
                                           d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z" />
                                 </svg>
                                 Salir
+=======
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <!--dropdown Seguridad -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Seguridad
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="@Url.Action("CrearUsuario", "Admin")">Crear usuarios</a>
+                                <a class="dropdown-item" href="@Url.Action("AsignarRol" , "Admin")">Asignar Roles</a>
+                                <a class="dropdown-item" href="@Url.Action("CambiarPWd" , "Admin")">Cambiar Contraseña</a>
+                            </div>
+                            <!--dropdown Administracion -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Administracion
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ url_for('procesadores') }}">Consecutivos</a>
+                                <a class="dropdown-item" href="{{ url_for('motherboard') }}">Paises</a>
+                                <a class="dropdown-item" href="{{ url_for('ram') }}">Aerolineas</a>
+                                <a class="dropdown-item" href="{{ url_for('tarjetavideo') }}">Puertas del aeropuerto</a>
+                            </div>
+                            <!--dropdown Consultas -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Consultas
+>>>>>>> Stashed changes
                             </a>
                         </form>
                     </div>
