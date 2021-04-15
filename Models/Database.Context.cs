@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using V_VuelosServiciosWeb.Models;
 
-namespace V_VuelosServiciosWeb
+
+namespace V_VuelosServiciosWeb.Models
 {
     using System;
     using System.Data.Entity;

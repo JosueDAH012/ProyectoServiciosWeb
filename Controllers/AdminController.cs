@@ -2,13 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
+using V_VuelosServiciosWeb.Models;
+
 
 namespace V_VuelosServiciosWeb.Controllers
 {
-    public class AdminController : Controller
+    
+    public class AdminController : GeneralController
     {
         // GET: Admin
+        [System.Web.Mvc.HttpGet]
+        [System.Web.Mvc.Route("GetUsuarios")]
+        public IEnumerable<USUARIO> GetUsuarios()
+        {
+
+            var usuario = db.USUARIO.ToList();
+
+            return usuario;
+
+        }
 
         public ActionResult AsignarRol()
         {
@@ -19,6 +33,8 @@ namespace V_VuelosServiciosWeb.Controllers
         {
             return View();
         }
+
+
 
         public ActionResult ConsecutivoAdmi()
         {
@@ -106,7 +122,7 @@ namespace V_VuelosServiciosWeb.Controllers
         }
 
         // POST: Admin/Create
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         public ActionResult Create(FormCollection collection)
         {
             try
@@ -128,7 +144,7 @@ namespace V_VuelosServiciosWeb.Controllers
         }
 
         // POST: Admin/Edit/5
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
@@ -150,7 +166,7 @@ namespace V_VuelosServiciosWeb.Controllers
         }
 
         // POST: Admin/Delete/5
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try

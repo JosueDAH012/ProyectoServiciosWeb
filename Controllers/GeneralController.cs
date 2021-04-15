@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
-using System.Web.Mvc;
+using V_VuelosServiciosWeb.Models;
 
 namespace V_VuelosServiciosWeb.Controllers
 {
     public class GeneralController : ApiController
     {
+
         public DatebaseVuelosEntities db;
 
         public GeneralController()
@@ -17,4 +20,5 @@ namespace V_VuelosServiciosWeb.Controllers
         }
 
     }
+
 }
