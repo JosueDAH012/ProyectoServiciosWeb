@@ -9,10 +9,6 @@ namespace V_VuelosServiciosWeb.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
-        public ActionResult Index()
-        {
-            return View();
-        }
 
         public ActionResult AsignarRol()
         {
@@ -24,6 +20,79 @@ namespace V_VuelosServiciosWeb.Controllers
             return View();
         }
 
+        public ActionResult ConsecutivoAdmi()
+        {
+            return View();
+        }
+
+        public ActionResult ConsecutivoAerolineas()
+        {
+            return View();
+        }
+
+        public ActionResult RestablecerPwd()
+        {
+            return View();
+        }
+        public ActionResult ConsecutivoEditar()
+        {
+            return View();
+        }
+
+        public ActionResult ConsecutivoNuevo()
+        {
+            return View();
+        }
+
+        public ActionResult ConsecutivoPaises()
+        {
+            return View();
+        }
+
+        public ActionResult ConsecutivoPuertas()
+        {
+            return View();
+        }
+
+        public ActionResult ConsultaAerolineasPorPais()
+        {
+            return View();
+        }
+
+        public ActionResult ConsultaBitacora()
+        {
+            return View();
+        }
+
+        public ActionResult ConsultaErrores()
+        {
+            return View();
+        }
+
+        public ActionResult ConsultaPuertasActivas()
+        {
+            return View();
+        }
+
+        public ActionResult CrearUsuario()
+        {
+            return View();
+        }
+
+        public ActionResult CrearUsuarioAdmi()
+        {
+            return View();
+        }
+
+        public ActionResult LogIn()
+        {
+            return View();
+        }
+
+        public ActionResult PaginaPrincipal()
+        {
+            return View();
+        }
         // GET: Admin/Details/5
         public ActionResult Details(int id)
         {

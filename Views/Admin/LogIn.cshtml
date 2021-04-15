@@ -26,16 +26,16 @@
                             <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Iniciar sesión con Facebook</button>
                             <div class="mt-4">
                                 <div class="d-flex justify-content-center links">
-                                    ¿Tiene cuenta? <a href="#" class="ml-2">Registrarse</a>
+                                    ¿Tiene cuenta? <a href="@Url.Action("CrearUsuario", "Admin")" class="ml-2">Registrarse</a>
                                 </div>
                                 <div class="d-flex justify-content-center links">
-                                    ¿Tiene cuenta? <a href="#" class="ml-2">Registrarse</a>
+                                    ¿Olvido su contraseña? <a href="@Url.Action("RestablecerPwd", "Admin")" class="ml-2">RestablecerContraseña</a>
                                 </div>
                                 <br>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-10">
-                                    <button type="submit" class="btn btn-primary">Regresar</button>
+                                    <a class="btn btn-primary" href="@Url.Action("PaginaPrincipal", "Admin")">Regresar</a>
                                 </div>
                             </div>
                         </form>

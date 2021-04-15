@@ -31,7 +31,7 @@
                                 Seguridad
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url_for('gaming') }}">Crear usuarios</a>
+                                <a class="dropdown-item" href="@Url.Action("CrearUsuarioAdmi", "Admin")">Crear usuarios</a>
                                 <a class="dropdown-item" href="@Url.Action("AsignarRol" , "Admin")">Asignar Roles</a>
                                 <a class="dropdown-item" href="@Url.Action("CambiarPWd" , "Admin")">Cambiar Contraseña</a>
                             </div>
@@ -42,10 +42,10 @@
                                 Administracion
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url_for('procesadores') }}">Consecutivos</a>
-                                <a class="dropdown-item" href="{{ url_for('motherboard') }}">Paises</a>
-                                <a class="dropdown-item" href="{{ url_for('ram') }}">Aerolineas</a>
-                                <a class="dropdown-item" href="{{ url_for('tarjetavideo') }}">Puertas del aeropuerto</a>
+                                <a class="dropdown-item" href="@Url.Action("ConsecutivoAdmi", "Admin")">Consecutivos</a>
+                                <a class="dropdown-item" href="@Url.Action("ConsecutivoPaises","Admin")">Paises</a>
+                                <a class="dropdown-item" href="@Url.Action("ConsecutivoAerolineas", "Admin")">Aerolineas</a>
+                                <a class="dropdown-item" href="@Url.Action("ConsecutivoPuertas","Admin")">Puertas del aeropuerto</a>
                             </div>
                             <!--dropdown Consultas -->
                         <li class="nav-item dropdown">
@@ -54,10 +54,10 @@
                                 Consultas
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url_for('teclados') }}">Bitacora</a>
-                                <a class="dropdown-item" href="{{ url_for('mouse') }}">Errores</a>
-                                <a class="dropdown-item" href="{{ url_for('mousepad') }}">Aerolineas</a>
-                                <a class="dropdown-item" href="{{ url_for('controles') }}">Puertas</a>
+                                <a class="dropdown-item" href="@Url.Action("ConsultaBitacora","Admin")">Bitacora</a>
+                                <a class="dropdown-item" href="@Url.Action("ConsultaErrores","Admin")">Errores</a>
+                                <a class="dropdown-item" href="@Url.Action("ConsultaAerolineasPorPais", "Admin")">Aerolineas</a>
+                                <a class="dropdown-item" href="@Url.Action("ConsultaPuertasActivas","Admin")">Puertas</a>
                             </div>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
@@ -71,7 +71,7 @@
                             </svg>
                             {{session['username']}}
                         </span>
-                        <a href="/salir" class="btn btn-danger btn-sm ml-3" role="button" aria-pressed="true">
+                        <a href="@Url.Action("PaginaPrincipal","Admin")" class="btn btn-danger btn-sm ml-3" role="button" aria-pressed="true">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-square" fill="currentColor"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -96,7 +96,7 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    </div>
+    
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
