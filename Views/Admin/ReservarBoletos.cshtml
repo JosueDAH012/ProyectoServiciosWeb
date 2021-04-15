@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "ReservarBoletos";
+    Layout = "~/Views/Shared/LayoutCliente.cshtml";
 }
 
 <div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');height: 100vh; ">
@@ -41,7 +42,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-10">
                                     <button type="submit" class="btn btn-primary">Reservar</button>
-                                    <button type="submit" class="btn btn-primary">Atras</button>
+                                    <button href="@Url.Action("PaginaPrincipalCliente", "Admin")" class="btn btn-primary">Atras</button>
                                 </div>
                             </div>
                         </form>

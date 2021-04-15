@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "ConsecutivoAdmi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');height: 100vh; ">
@@ -16,7 +17,7 @@
                                     <th scope="col">Codigo</th>
                                     <th scope="col">Descripcion</th>
                                     <th scope="col">Consecutivo</th>
-                                    <th scope="col"href="@Url.Action("ConsecutivoEditar", "Admin")">Editar</th>
+                                    <th scope="col" href="@Url.Action("ConsecutivoEditar", "Admin")">Editar</th>
                                 </tr>
                             </thead>
                         </table>
