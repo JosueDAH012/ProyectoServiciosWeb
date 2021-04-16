@@ -1,0 +1,27 @@
+﻿@model V_VuelosServiciosWeb.Models.IMAGEN_PAIS
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>IMAGEN_PAIS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IMAGEN_PAIS1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMAGEN_PAIS1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_IMAGEN_PAIS }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

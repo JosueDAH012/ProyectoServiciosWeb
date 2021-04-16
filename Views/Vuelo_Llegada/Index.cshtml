@@ -1,0 +1,58 @@
+﻿@model IEnumerable<V_VuelosServiciosWeb.Models.VUELO_LLEGADA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PROCEDENCIA_VUELO_LLEGADA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_VUELO_LLEGADA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HORA_VUELO_LLEGADA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AEROLINEA.NOMBRE_AEROLINEA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PUERTA.DETALLE_PUERTA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROCEDENCIA_VUELO_LLEGADA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_VUELO_LLEGADA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HORA_VUELO_LLEGADA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AEROLINEA.NOMBRE_AEROLINEA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PUERTA.DETALLE_PUERTA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_VUELO_LLEGADA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_VUELO_LLEGADA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_VUELO_LLEGADA })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,35 @@
+﻿@model V_VuelosServiciosWeb.Models.PUERTA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PUERTA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NUMERO_PUERTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMERO_PUERTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DETALLE_PUERTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DETALLE_PUERTA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PUERTA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

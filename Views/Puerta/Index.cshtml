@@ -1,0 +1,40 @@
+﻿@model IEnumerable<V_VuelosServiciosWeb.Models.PUERTA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NUMERO_PUERTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DETALLE_PUERTA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NUMERO_PUERTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DETALLE_PUERTA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PUERTA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_PUERTA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PUERTA })
+        </td>
+    </tr>
+}
+
+</table>

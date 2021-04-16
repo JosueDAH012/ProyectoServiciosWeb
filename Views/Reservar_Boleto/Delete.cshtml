@@ -1,0 +1,57 @@
+﻿@model V_VuelosServiciosWeb.Models.RESERVAR_BOLETO
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RESERVAR_BOLETO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BOOKING_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BOOKING_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CANTIDAD_RESERVAR_BOLETOS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CANTIDAD_RESERVAR_BOLETOS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOTAL_RESERVAR_BOLETO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOTAL_RESERVAR_BOLETO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLIENTE.NOMBRE_CLIENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLIENTE.NOMBRE_CLIENTE)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

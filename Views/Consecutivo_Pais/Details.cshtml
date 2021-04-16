@@ -1,0 +1,51 @@
+﻿@model V_VuelosServiciosWeb.Models.CONSECUTIVO_PAIS
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CONSECUTIVO_PAIS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CONSECUTIVO_PAIS1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONSECUTIVO_PAIS1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PREFIJO_PAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PREFIJO_PAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RANGO_INICIAL_PAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RANGO_INICIAL_PAIS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RANGO_FINAL_PAIS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RANGO_FINAL_PAIS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_CONSECUTIVO_PAIS }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
