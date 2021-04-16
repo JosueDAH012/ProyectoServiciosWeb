@@ -5,9 +5,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Facebook;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
+using V_VuelosServiciosWeb.Facebook;
 using V_VuelosServiciosWeb.Providers;
 using V_VuelosServiciosWeb.Models;
 
@@ -59,11 +61,21 @@ namespace V_VuelosServiciosWeb
             //    appId: "",
             //    appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            var facebookOptions = new FacebookAuthenticationOptions()
+            {
+                AppId = "160811734413146",
+                AppSecret = "21f2665e0aed11867fcd8d35e67d6068",
+                BackchannelHttpHandler = new FacebookBackChannelHandler(),
+                UserInformationEndpoint = "https://graph.facebook.com/v2.4/me?fields=id,email"
+            };
+            facebookOptions.Scope.Add("email");
+            app.UseFacebookAuthentication(facebookOptions);
+
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "471835889074-kjqnk7scf0l7cohpno3cmet85f9ihktu.apps.googleusercontent.com",
+                ClientSecret = "1sQe98PMqENe_JoGzVVqXju6"
+            });
         }
     }
 }

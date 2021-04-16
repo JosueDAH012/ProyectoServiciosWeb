@@ -12,18 +12,13 @@ namespace V_VuelosServiciosWeb.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ROL
+    public partial class database_firewall_rules
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ROL()
-        {
-            this.USUARIO = new HashSet<USUARIO>();
-        }
-    
-        public int ID_ROL { get; set; }
-        public string TIPO_ROL { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<USUARIO> USUARIO { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string start_ip_address { get; set; }
+        public string end_ip_address { get; set; }
+        public System.DateTime create_date { get; set; }
+        public System.DateTime modify_date { get; set; }
     }
 }

@@ -14,7 +14,7 @@
             <div class="container d-flex flex-column flex-md-row justify-content-between">
                 <div class="d-grid gap-2 d-md-block">
                     <a class="navbar-brand" href="@Url.Action("Index", "Home")">V-Vuelos</a>
-                    
+
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                             aria-label="Toggle navigation">
@@ -96,7 +96,15 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    
+    <script>
+        $('#btnGoogleLogin').click(function () {
+            window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=https%3A%2F%2Flocalhost%3A44315%2FAdmin%2FLogIn.cshtml&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
+        });
+        $('#btnFacebookLogin').click(function () {
+            window.location.href = "/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=http%3a%2f%2flocalhost%3a61358%2fLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
+
+        });
+    </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
