@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DatebaseVuelosModelStoreContainer" CdmEntityContainer="DatebaseVuelosEntities">
+  <EntityContainerMapping StorageEntityContainer="servicioswebModelStoreContainer" CdmEntityContainer="servicioswebEntities">
     <EntitySetMapping Name="AEROLINEA">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.AEROLINEA">
+      <EntityTypeMapping TypeName="servicioswebModel.AEROLINEA">
         <MappingFragment StoreEntitySet="AEROLINEA">
           <ScalarProperty Name="ID_AEROLINEA" ColumnName="ID_AEROLINEA" />
           <ScalarProperty Name="NOMBRE_AEROLINEA" ColumnName="NOMBRE_AEROLINEA" />
@@ -11,7 +11,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="BITACORA">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.BITACORA">
+      <EntityTypeMapping TypeName="servicioswebModel.BITACORA">
         <MappingFragment StoreEntitySet="BITACORA">
           <ScalarProperty Name="ID_BITACORA" ColumnName="ID_BITACORA" />
           <ScalarProperty Name="USUARIO_BITACORA" ColumnName="USUARIO_BITACORA" />
@@ -24,7 +24,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CLIENTE">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.CLIENTE">
+      <EntityTypeMapping TypeName="servicioswebModel.CLIENTE">
         <MappingFragment StoreEntitySet="CLIENTE">
           <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
           <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE_CLIENTE" />
@@ -37,7 +37,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="COMPRAR_BOLETO">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.COMPRAR_BOLETO">
+      <EntityTypeMapping TypeName="servicioswebModel.COMPRAR_BOLETO">
         <MappingFragment StoreEntitySet="COMPRAR_BOLETO">
           <ScalarProperty Name="ID_BOLETO" ColumnName="ID_BOLETO" />
           <ScalarProperty Name="ID_CLIENTEFK" ColumnName="ID_CLIENTEFK" />
@@ -48,7 +48,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CONSECUTIVO_AEROLINEA">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.CONSECUTIVO_AEROLINEA">
+      <EntityTypeMapping TypeName="servicioswebModel.CONSECUTIVO_AEROLINEA">
         <MappingFragment StoreEntitySet="CONSECUTIVO_AEROLINEA">
           <ScalarProperty Name="ID_CONSECUTIVO_AEROLINEA" ColumnName="ID_CONSECUTIVO_AEROLINEA" />
           <ScalarProperty Name="CONSECUTIVO_AEROLINEA1" ColumnName="CONSECUTIVO_AEROLINEA1" />
@@ -59,7 +59,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CONSECUTIVO_PAIS">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.CONSECUTIVO_PAIS">
+      <EntityTypeMapping TypeName="servicioswebModel.CONSECUTIVO_PAIS">
         <MappingFragment StoreEntitySet="CONSECUTIVO_PAIS">
           <ScalarProperty Name="ID_CONSECUTIVO_PAIS" ColumnName="ID_CONSECUTIVO_PAIS" />
           <ScalarProperty Name="CONSECUTIVO_PAIS1" ColumnName="CONSECUTIVO_PAIS1" />
@@ -70,7 +70,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CONSECUTIVO_PUERTA">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.CONSECUTIVO_PUERTA">
+      <EntityTypeMapping TypeName="servicioswebModel.CONSECUTIVO_PUERTA">
         <MappingFragment StoreEntitySet="CONSECUTIVO_PUERTA">
           <ScalarProperty Name="ID_CONSECUTIVO_PUERTA" ColumnName="ID_CONSECUTIVO_PUERTA" />
           <ScalarProperty Name="CONSECUTIVO_PUERTA1" ColumnName="CONSECUTIVO_PUERTA1" />
@@ -81,7 +81,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CONSECUTIVO_VUELO">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.CONSECUTIVO_VUELO">
+      <EntityTypeMapping TypeName="servicioswebModel.CONSECUTIVO_VUELO">
         <MappingFragment StoreEntitySet="CONSECUTIVO_VUELO">
           <ScalarProperty Name="ID_CONSECUTIVO_VUELO" ColumnName="ID_CONSECUTIVO_VUELO" />
           <ScalarProperty Name="CONSECUTIVO_VUELO1" ColumnName="CONSECUTIVO_VUELO1" />
@@ -92,7 +92,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ERROR">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.ERROR">
+      <EntityTypeMapping TypeName="servicioswebModel.ERROR">
         <MappingFragment StoreEntitySet="ERROR">
           <ScalarProperty Name="ID_ERROR" ColumnName="ID_ERROR" />
           <ScalarProperty Name="FECHA_ERROR" ColumnName="FECHA_ERROR" />
@@ -101,7 +101,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="IMAGEN_AEROLINEA">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.IMAGEN_AEROLINEA">
+      <EntityTypeMapping TypeName="servicioswebModel.IMAGEN_AEROLINEA">
         <MappingFragment StoreEntitySet="IMAGEN_AEROLINEA">
           <ScalarProperty Name="ID_IMAGEN_AEROLINEA" ColumnName="ID_IMAGEN_AEROLINEA" />
           <ScalarProperty Name="IMAGEN_AEROLINEA1" ColumnName="IMAGEN_AEROLINEA1" />
@@ -109,7 +109,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="IMAGEN_PAIS">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.IMAGEN_PAIS">
+      <EntityTypeMapping TypeName="servicioswebModel.IMAGEN_PAIS">
         <MappingFragment StoreEntitySet="IMAGEN_PAIS">
           <ScalarProperty Name="ID_IMAGEN_PAIS" ColumnName="ID_IMAGEN_PAIS" />
           <ScalarProperty Name="IMAGEN_PAIS1" ColumnName="IMAGEN_PAIS1" />
@@ -117,7 +117,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PAIS">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.PAIS">
+      <EntityTypeMapping TypeName="servicioswebModel.PAIS">
         <MappingFragment StoreEntitySet="PAIS">
           <ScalarProperty Name="ID_PAIS" ColumnName="ID_PAIS" />
           <ScalarProperty Name="NOMBRE_PAIS" ColumnName="NOMBRE_PAIS" />
@@ -126,7 +126,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PUERTA">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.PUERTA">
+      <EntityTypeMapping TypeName="servicioswebModel.PUERTA">
         <MappingFragment StoreEntitySet="PUERTA">
           <ScalarProperty Name="ID_PUERTA" ColumnName="ID_PUERTA" />
           <ScalarProperty Name="NUMERO_PUERTA" ColumnName="NUMERO_PUERTA" />
@@ -135,7 +135,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="RESERVAR_BOLETO">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.RESERVAR_BOLETO">
+      <EntityTypeMapping TypeName="servicioswebModel.RESERVAR_BOLETO">
         <MappingFragment StoreEntitySet="RESERVAR_BOLETO">
           <ScalarProperty Name="ID_RESERVAR_BOLETO" ColumnName="ID_RESERVAR_BOLETO" />
           <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
@@ -146,7 +146,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ROL">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.ROL">
+      <EntityTypeMapping TypeName="servicioswebModel.ROL">
         <MappingFragment StoreEntitySet="ROL">
           <ScalarProperty Name="ID_ROL" ColumnName="ID_ROL" />
           <ScalarProperty Name="TIPO_ROL" ColumnName="TIPO_ROL" />
@@ -154,7 +154,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TARJETA">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.TARJETA">
+      <EntityTypeMapping TypeName="servicioswebModel.TARJETA">
         <MappingFragment StoreEntitySet="TARJETA">
           <ScalarProperty Name="ID_TARJETA" ColumnName="ID_TARJETA" />
           <ScalarProperty Name="MES_TARJETA" ColumnName="MES_TARJETA" />
@@ -166,7 +166,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="USUARIO">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.USUARIO">
+      <EntityTypeMapping TypeName="servicioswebModel.USUARIO">
         <MappingFragment StoreEntitySet="USUARIO">
           <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
           <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
@@ -179,7 +179,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="VUELO_LLEGADA">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.VUELO_LLEGADA">
+      <EntityTypeMapping TypeName="servicioswebModel.VUELO_LLEGADA">
         <MappingFragment StoreEntitySet="VUELO_LLEGADA">
           <ScalarProperty Name="ID_VUELO_LLEGADA" ColumnName="ID_VUELO_LLEGADA" />
           <ScalarProperty Name="ID_AEROLINEAFK" ColumnName="ID_AEROLINEAFK" />
@@ -191,7 +191,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="VUELO_SALIDA">
-      <EntityTypeMapping TypeName="DatebaseVuelosModel.VUELO_SALIDA">
+      <EntityTypeMapping TypeName="servicioswebModel.VUELO_SALIDA">
         <MappingFragment StoreEntitySet="VUELO_SALIDA">
           <ScalarProperty Name="ID_VUELO_SALIDA" ColumnName="ID_VUELO_SALIDA" />
           <ScalarProperty Name="ID_AEROLINEAFK" ColumnName="ID_AEROLINEAFK" />

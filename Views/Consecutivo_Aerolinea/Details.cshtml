@@ -1,0 +1,51 @@
+﻿@model V_VuelosServiciosWeb.Models.CONSECUTIVO_AEROLINEA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CONSECUTIVO_AEROLINEA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CONSECUTIVO_AEROLINEA1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONSECUTIVO_AEROLINEA1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PREFIJO_AEROLINEA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PREFIJO_AEROLINEA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RANGO_INICIAL_AEROLINEA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RANGO_INICIAL_AEROLINEA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RANGO_FINAL_AEROLINEA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RANGO_FINAL_AEROLINEA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_CONSECUTIVO_AEROLINEA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DatebaseVuelosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="servicioswebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="AEROLINEA">
     <Key>
       <PropertyRef Name="ID_AEROLINEA" />
@@ -182,7 +182,147 @@
     <Property Name="HORA_VUELO_SALIDA" Type="varchar" MaxLength="20" />
     <Property Name="ID_PUERTAFK" Type="varchar" MaxLength="30" />
   </EntityType>
-  <EntityContainer Name="DatebaseVuelosModelStoreContainer">
+  <Association Name="FK_ID_AEROLINEAFK">
+    <End Role="AEROLINEA" Type="Self.AEROLINEA" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VUELO_LLEGADA" Type="Self.VUELO_LLEGADA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AEROLINEA">
+        <PropertyRef Name="ID_AEROLINEA" />
+      </Principal>
+      <Dependent Role="VUELO_LLEGADA">
+        <PropertyRef Name="ID_AEROLINEAFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_AEROLINEAFKS">
+    <End Role="AEROLINEA" Type="Self.AEROLINEA" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VUELO_SALIDA" Type="Self.VUELO_SALIDA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AEROLINEA">
+        <PropertyRef Name="ID_AEROLINEA" />
+      </Principal>
+      <Dependent Role="VUELO_SALIDA">
+        <PropertyRef Name="ID_AEROLINEAFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_CLIENTE">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TARJETA" Type="Self.TARJETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="TARJETA">
+        <PropertyRef Name="ID_CLIENTEFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_CLIENTEFKC">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="COMPRAR_BOLETO" Type="Self.COMPRAR_BOLETO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="COMPRAR_BOLETO">
+        <PropertyRef Name="ID_CLIENTEFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_CLIENTEFKR">
+    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RESERVAR_BOLETO" Type="Self.RESERVAR_BOLETO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTE">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="RESERVAR_BOLETO">
+        <PropertyRef Name="ID_CLIENTEFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_PUERTAFK">
+    <End Role="PUERTA" Type="Self.PUERTA" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VUELO_LLEGADA" Type="Self.VUELO_LLEGADA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PUERTA">
+        <PropertyRef Name="ID_PUERTA" />
+      </Principal>
+      <Dependent Role="VUELO_LLEGADA">
+        <PropertyRef Name="ID_PUERTAFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_PUERTAFKS">
+    <End Role="PUERTA" Type="Self.PUERTA" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VUELO_SALIDA" Type="Self.VUELO_SALIDA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PUERTA">
+        <PropertyRef Name="ID_PUERTA" />
+      </Principal>
+      <Dependent Role="VUELO_SALIDA">
+        <PropertyRef Name="ID_PUERTAFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_ROLFK">
+    <End Role="ROL" Type="Self.ROL" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROL">
+        <PropertyRef Name="ID_ROL" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_ROLFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMAGEN_AEROLINEA">
+    <End Role="IMAGEN_AEROLINEA" Type="Self.IMAGEN_AEROLINEA" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AEROLINEA" Type="Self.AEROLINEA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMAGEN_AEROLINEA">
+        <PropertyRef Name="ID_IMAGEN_AEROLINEA" />
+      </Principal>
+      <Dependent Role="AEROLINEA">
+        <PropertyRef Name="ID_IMAGEN_AEROLINEAFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMAGEN_PAIS">
+    <End Role="IMAGEN_PAIS" Type="Self.IMAGEN_PAIS" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PAIS" Type="Self.PAIS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMAGEN_PAIS">
+        <PropertyRef Name="ID_IMAGEN_PAIS" />
+      </Principal>
+      <Dependent Role="PAIS">
+        <PropertyRef Name="ID_IMAGEN_PAISFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="servicioswebModelStoreContainer">
     <EntitySet Name="AEROLINEA" EntityType="Self.AEROLINEA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BITACORA" EntityType="Self.BITACORA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
@@ -202,5 +342,45 @@
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VUELO_LLEGADA" EntityType="Self.VUELO_LLEGADA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VUELO_SALIDA" EntityType="Self.VUELO_SALIDA" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ID_AEROLINEAFK" Association="Self.FK_ID_AEROLINEAFK">
+      <End Role="AEROLINEA" EntitySet="AEROLINEA" />
+      <End Role="VUELO_LLEGADA" EntitySet="VUELO_LLEGADA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_AEROLINEAFKS" Association="Self.FK_ID_AEROLINEAFKS">
+      <End Role="AEROLINEA" EntitySet="AEROLINEA" />
+      <End Role="VUELO_SALIDA" EntitySet="VUELO_SALIDA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_CLIENTE" Association="Self.FK_ID_CLIENTE">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="TARJETA" EntitySet="TARJETA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_CLIENTEFKC" Association="Self.FK_ID_CLIENTEFKC">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="COMPRAR_BOLETO" EntitySet="COMPRAR_BOLETO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_CLIENTEFKR" Association="Self.FK_ID_CLIENTEFKR">
+      <End Role="CLIENTE" EntitySet="CLIENTE" />
+      <End Role="RESERVAR_BOLETO" EntitySet="RESERVAR_BOLETO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_PUERTAFK" Association="Self.FK_ID_PUERTAFK">
+      <End Role="PUERTA" EntitySet="PUERTA" />
+      <End Role="VUELO_LLEGADA" EntitySet="VUELO_LLEGADA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_PUERTAFKS" Association="Self.FK_ID_PUERTAFKS">
+      <End Role="PUERTA" EntitySet="PUERTA" />
+      <End Role="VUELO_SALIDA" EntitySet="VUELO_SALIDA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_ROLFK" Association="Self.FK_ID_ROLFK">
+      <End Role="ROL" EntitySet="ROL" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMAGEN_AEROLINEA" Association="Self.FK_IMAGEN_AEROLINEA">
+      <End Role="IMAGEN_AEROLINEA" EntitySet="IMAGEN_AEROLINEA" />
+      <End Role="AEROLINEA" EntitySet="AEROLINEA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMAGEN_PAIS" Association="Self.FK_IMAGEN_PAIS">
+      <End Role="IMAGEN_PAIS" EntitySet="IMAGEN_PAIS" />
+      <End Role="PAIS" EntitySet="PAIS" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

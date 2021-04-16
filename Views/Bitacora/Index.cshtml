@@ -1,0 +1,64 @@
+﻿@model IEnumerable<V_VuelosServiciosWeb.Models.BITACORA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.USUARIO_BITACORA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FECHA_BITACORA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODIGO_BITACORA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_BITACORA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPCION_BITACORA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DETALLE_BITACORA)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.USUARIO_BITACORA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FECHA_BITACORA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODIGO_BITACORA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_BITACORA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPCION_BITACORA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DETALLE_BITACORA)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_BITACORA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_BITACORA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_BITACORA })
+        </td>
+    </tr>
+}
+
+</table>
