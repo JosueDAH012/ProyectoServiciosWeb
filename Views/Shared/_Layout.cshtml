@@ -39,13 +39,14 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Administracion
+                                Consecutivos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="@Url.Action("ConsecutivoAdmi", "Admin")">Consecutivos</a>
-                                <a class="dropdown-item" href="@Url.Action("ConsecutivoPaises","Admin")">Paises</a>
-                                <a class="dropdown-item" href="@Url.Action("ConsecutivoAerolineas", "Admin")">Aerolineas</a>
-                                <a class="dropdown-item" href="@Url.Action("ConsecutivoPuertas","Admin")">Puertas del aeropuerto</a>
+                                
+                                <a class="dropdown-item" href="@Url.Action("Index", "Consecutivo_Vuelo")">Vuelos</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","Consecutivo_Pais")">Paises</a>
+                                <a class="dropdown-item" href="@Url.Action("Index", "Consecutivo_Aerolinea")">Aerolineas</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","Consecutivo_Puerta")">Puertas del aeropuerto</a>
                             </div>
                             <!--dropdown Consultas -->
                         <li class="nav-item dropdown">
@@ -54,10 +55,10 @@
                                 Consultas
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="@Url.Action("ConsultaBitacora","Admin")">Bitacora</a>
-                                <a class="dropdown-item" href="@Url.Action("ConsultaErrores","Admin")">Errores</a>
-                                <a class="dropdown-item" href="@Url.Action("ConsultaAerolineasPorPais", "Admin")">Aerolineas</a>
-                                <a class="dropdown-item" href="@Url.Action("ConsultaPuertasActivas","Admin")">Puertas</a>
+                                
+                                <a class="dropdown-item" href="@Url.Action("Index", "Aerolinea")">Aerolineas</a>
+
+                                <a class="dropdown-item" href="@Url.Action("Index","Puerta")">Puertas del aeropuerto</a>
                             </div>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
