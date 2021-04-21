@@ -2,50 +2,52 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');height: 100vh; ">
 
-<h2>Details</h2>
+    <h2>Details</h2>
 
-<div>
-    <h4>CONSECUTIVO_VUELO</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CONSECUTIVO_VUELO1)
-        </dt>
+    <div>
+        <h4>CONSECUTIVO_VUELO</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CONSECUTIVO_VUELO1)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CONSECUTIVO_VUELO1)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.CONSECUTIVO_VUELO1)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PREFIJO_VUELO)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PREFIJO_VUELO)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PREFIJO_VUELO)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PREFIJO_VUELO)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RANGO_INICIAL_VUELO)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.RANGO_INICIAL_VUELO)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RANGO_INICIAL_VUELO)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.RANGO_INICIAL_VUELO)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RANGO_FINAL_VUELO)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.RANGO_FINAL_VUELO)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RANGO_FINAL_VUELO)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.RANGO_FINAL_VUELO)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_CONSECUTIVO_VUELO }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_CONSECUTIVO_VUELO }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>

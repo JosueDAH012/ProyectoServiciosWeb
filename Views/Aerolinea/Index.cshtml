@@ -2,39 +2,42 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');height: 100vh; ">
 
-<h2>Index</h2>
+    <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NOMBRE_AEROLINEA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IMAGEN_AEROLINEA.ID_IMAGEN_AEROLINEA)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NOMBRE_AEROLINEA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IMAGEN_AEROLINEA.ID_IMAGEN_AEROLINEA)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOMBRE_AEROLINEA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IMAGEN_AEROLINEA.ID_IMAGEN_AEROLINEA)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_AEROLINEA }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_AEROLINEA }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_AEROLINEA })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NOMBRE_AEROLINEA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IMAGEN_AEROLINEA.ID_IMAGEN_AEROLINEA)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_AEROLINEA }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_AEROLINEA }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_AEROLINEA })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+    </div>

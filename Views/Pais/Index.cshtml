@@ -2,14 +2,15 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');height: 100vh; ">
 
-<h2>Index</h2>
+    <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
 <table class="table">
     <tr>
         <th>
@@ -21,20 +22,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOMBRE_PAIS)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IMAGEN_PAIS.ID_IMAGEN_PAIS)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PAIS }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_PAIS }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PAIS })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRE_PAIS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IMAGEN_PAIS.ID_IMAGEN_PAIS)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID_PAIS }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID_PAIS }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID_PAIS })
+            </td>
+        </tr>
+    }
 
 </table>
+</div>

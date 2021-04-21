@@ -2,56 +2,59 @@
 
 @{
     ViewBag.Title = "Delete";
-    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');height: 100vh; ">
 
-<h2>Delete</h2>
+    <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>CONSECUTIVO_PAIS</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CONSECUTIVO_PAIS1)
-        </dt>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>CONSECUTIVO_PAIS</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CONSECUTIVO_PAIS1)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CONSECUTIVO_PAIS1)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.CONSECUTIVO_PAIS1)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PREFIJO_PAIS)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PREFIJO_PAIS)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PREFIJO_PAIS)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PREFIJO_PAIS)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RANGO_INICIAL_PAIS)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.RANGO_INICIAL_PAIS)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RANGO_INICIAL_PAIS)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.RANGO_INICIAL_PAIS)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RANGO_FINAL_PAIS)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.RANGO_FINAL_PAIS)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RANGO_FINAL_PAIS)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.RANGO_FINAL_PAIS)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+    </div>

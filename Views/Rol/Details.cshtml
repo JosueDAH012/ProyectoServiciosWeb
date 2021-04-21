@@ -2,26 +2,28 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/LayoutCliente.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');height: 100vh; ">
 
-<h2>Details</h2>
+    <h2>Details</h2>
 
-<div>
-    <h4>ROL</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TIPO_ROL)
-        </dt>
+    <div>
+        <h4>ROL</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TIPO_ROL)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TIPO_ROL)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TIPO_ROL)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_ROL }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_ROL }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>

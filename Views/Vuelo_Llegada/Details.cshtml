@@ -4,56 +4,58 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/LayoutCliente.cshtml";
 }
+<div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');height: 100vh; ">
 
-<h2>Details</h2>
+    <h2>Details</h2>
 
-<div>
-    <h4>VUELO_LLEGADA</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PROCEDENCIA_VUELO_LLEGADA)
-        </dt>
+    <div>
+        <h4>VUELO_LLEGADA</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PROCEDENCIA_VUELO_LLEGADA)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PROCEDENCIA_VUELO_LLEGADA)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PROCEDENCIA_VUELO_LLEGADA)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FECHA_VUELO_LLEGADA)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.FECHA_VUELO_LLEGADA)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FECHA_VUELO_LLEGADA)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.FECHA_VUELO_LLEGADA)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HORA_VUELO_LLEGADA)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.HORA_VUELO_LLEGADA)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.HORA_VUELO_LLEGADA)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.HORA_VUELO_LLEGADA)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AEROLINEA.NOMBRE_AEROLINEA)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.AEROLINEA.NOMBRE_AEROLINEA)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AEROLINEA.NOMBRE_AEROLINEA)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.AEROLINEA.NOMBRE_AEROLINEA)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PUERTA.DETALLE_PUERTA)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PUERTA.DETALLE_PUERTA)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PUERTA.DETALLE_PUERTA)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PUERTA.DETALLE_PUERTA)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_VUELO_LLEGADA }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_VUELO_LLEGADA }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>
