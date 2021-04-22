@@ -31,9 +31,9 @@
                                 Seguridad
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="@Url.Action("CrearUsuarioAdmi", "Admin")">Crear usuarios</a>
-                                <a class="dropdown-item" href="@Url.Action("AsignarRol" , "Admin")">Asignar Roles</a>
-                                <a class="dropdown-item" href="@Url.Action("CambiarPWd" , "Admin")">Cambiar Contraseña</a>
+                                <a class="dropdown-item" href="@Url.Action("Create", "Usuario")">Crear usuarios</a>
+                                <a class="dropdown-item" href="@Url.Action("Index" , "Usuario")">Asignar Roles</a>
+                                <a class="dropdown-item" href="@Url.Action("Edit" , "Usuario")">Cambiar Contraseña</a>
                             </div>
                             <!--dropdown Administracion -->
                         <li class="nav-item dropdown">
@@ -56,9 +56,12 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 
+
                                 <a class="dropdown-item" href="@Url.Action("Index", "Aerolinea")">Aerolineas</a>
 
                                 <a class="dropdown-item" href="@Url.Action("Index","Puerta")">Puertas del aeropuerto</a>
+
+
                             </div>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
