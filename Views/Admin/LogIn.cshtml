@@ -13,12 +13,12 @@
                         <h1 class="card-title text-center">Iniciar Sesion</h1>
                         <form class="form-signin">
                             <div class="form-label-group">
-                                <input id="usuario" class="form-control" placeholder="Usuario" required autofocus>
+                                <input id="usuario" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
                                 <label for="label">Usuario</label>
                             </div>
 
                             <div class="form-label-group">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                                <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Contraseña" required>
                                 <label for="inputPassword">Contraseña</label>
                             </div>
                             <a id="login" href="@Url.Action("PaginaPrincipal","Admin")" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Iniciar Sesion</a>
@@ -29,7 +29,7 @@
                                    value="Login with Facebook" class="btn btn-success" />
                             <div class="mt-4">
                                 <div class="d-flex justify-content-center links">
-                                    ¿Tiene cuenta? <a href="@Url.Action("CrearUsuario", "Admin")" class="ml-2">Registrarse</a>
+                                    ¿Tiene cuenta? <a href="@Url.Action("Create", "Usuario")" class="ml-2">Registrarse</a>
                                 </div>
                                 <div class="d-flex justify-content-center links">
                                     ¿Olvido su contraseña? <a href="@Url.Action("RestablecerPwd", "Admin")" class="ml-2">RestablecerContraseña</a>
@@ -37,9 +37,7 @@
                                 <br>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-10">
-                                    <a class="btn btn-primary" href="@Url.Action("Create", "Usuario")">Crear usuario</a>
-                                </div>
+                                
                             </div>
                         </form>
                     </div>
