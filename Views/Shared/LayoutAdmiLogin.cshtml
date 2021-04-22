@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/bootstrap.css")
     @Scripts.Render("~/bundles/modernizr")
@@ -23,10 +23,10 @@
 
                 </div>
                 <form class="form-inline my-2 my-lg-0">
-                    <a href="@Url.Action("LogIn","Admin")" class="btn btn-secondary btn-sm ml-3" role="button" aria-pressed="true">
+                    <a href="@Url.Action("Login","Admin")" class="btn btn-secondary btn-sm ml-3" role="button" aria-pressed="true">
                         Iniciar Sesion
                     </a>
-                    <a href="@Url.Action("Create","Usuario")" class="btn btn-secondary btn-sm ml-3" role="button" aria-pressed="true">
+                    <a href="@Url.Action("CrearUsuario","Admin")" class="btn btn-secondary btn-sm ml-3" role="button" aria-pressed="true">
                         Registrarse
                     </a>
                 </form>
@@ -41,7 +41,18 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    
+
+    <script>
+
+        $('#btnGoogleLogin').click(function () {
+            window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=https%3A%2F%2Flocalhost%3A44315%2FAdmin%2FLogin.cshtml&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
+        });
+        $('#btnFacebookLogin').click(function () {
+            window.location.href = "/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=https%3A%2F%2Flocalhost%3A44315%2FAdmin%2FLogin.cshtml&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
+
+        });
+    </script>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

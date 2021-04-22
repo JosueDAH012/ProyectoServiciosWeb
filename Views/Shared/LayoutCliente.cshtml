@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/bootstrap.css")
     @Scripts.Render("~/bundles/modernizr")
@@ -32,8 +32,8 @@
                         Busqueda de vuelos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="@Url.Action("LlegadaVuelos","Vuelo_Llegada")">Llegada de los vuelos</a>
-                        <a class="dropdown-item" href="@Url.Action("SalidaVuelos","Admin")">Salida de los vuelos</a>
+                        <a class="dropdown-item" href="@Url.Action("Index","Vuelo_Llegada")">Llegada de los vuelos</a>
+                        <a class="dropdown-item" href="@Url.Action("Index","Vuelo_Salida")">Salida de los vuelos</a>
                     </div>
                             <!--dropdown Administracion -->
                     <li class="nav-item dropdown">
@@ -42,8 +42,8 @@
                                 Compra & Reserva de vuelos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="@Url.Action("CompraBoletos","Admin")">Comprar Boletos</a>
-                                    <a class="dropdown-item" href="@Url.Action("ReservarBoletos","Admin")">Reservar Boletos</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","Comprar_Boleto")">Comprar Boletos</a>
+                                    <a class="dropdown-item" href="@Url.Action("Index","Reservar_Boleto")">Reservar Boletos</a>
                                 </div>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
@@ -55,9 +55,9 @@
                                 <path fill-rule="evenodd"
                                       d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
                             </svg>
-                            {{session['username']}}
+                            <!--Welcome @(Request.IsAuthenticated? HttpContext.Current.User.Identity.Name : "")  (User) </div>-->
                         </span>
-                        <a href="@Url.Action("PaginaPrincipal","Admin")" class="btn btn-danger btn-sm ml-3" role="button" aria-pressed="true">
+                        <a href="@Url.Action("Index","Home")" class="btn btn-danger btn-sm ml-3" role="button" aria-pressed="true">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-square" fill="currentColor"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"

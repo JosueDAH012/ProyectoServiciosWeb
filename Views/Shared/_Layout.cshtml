@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/bootstrap.css")
     @Scripts.Render("~/bundles/modernizr")
@@ -13,7 +13,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container d-flex flex-column flex-md-row justify-content-between">
                 <div class="d-grid gap-2 d-md-block">
-                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">V-Vuelos</a>
+                    <a class="navbar-brand" href="@Url.Action("PaginaPrincipal", "Admin")">V-Vuelos</a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,9 +31,8 @@
                                 Seguridad
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="@Url.Action("Create", "Usuario")">Crear usuarios</a>
-                                <a class="dropdown-item" href="@Url.Action("Index" , "Usuario")">Asignar Roles</a>
-                                <a class="dropdown-item" href="@Url.Action("Edit" , "Usuario")">Cambiar Contraseña</a>
+                                <a class="dropdown-item" href="@Url.Action("Create", "Admin")">Crear usuarios</a>
+                                <a class="dropdown-item" href="@Url.Action("Indexx" , "Admin")">Cambio de informacion</a>
                             </div>
                             <!--dropdown Administracion -->
                         <li class="nav-item dropdown">
@@ -73,9 +72,9 @@
                                 <path fill-rule="evenodd"
                                       d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
                             </svg>
-                            {{session['username']}}
+                            <!--<div>Welcome @(Request.IsAuthenticated? HttpContext.Current.User.Identity.Name : "")  (User) </div>-->
                         </span>
-                        <a href="@Url.Action("PaginaPrincipal","Admin")" class="btn btn-danger btn-sm ml-3" role="button" aria-pressed="true">
+                        <a href="@Url.Action("Index","Home")" class="btn btn-danger btn-sm ml-3" role="button" aria-pressed="true">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-square" fill="currentColor"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -100,16 +99,7 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    <script>
-        $('#btnGoogleLogin').click(function () {
-            window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=https%3A%2F%2Flocalhost%3A44315%2FAdmin%2FLogIn.cshtml&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
-        });
-        $('#btnFacebookLogin').click(function () {
-            window.location.href = "/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=http%3a%2f%2flocalhost%3a61358%2fLogin.html&state=GerGr5JlYx4t_KpsK57GFSxVueteyBunu02xJTak5m01";
-
-        });
-    </script>
-    @Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

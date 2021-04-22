@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EasyPayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EASYPAY">
+    <Key>
+      <PropertyRef Name="ID_CUENTA" />
+    </Key>
+    <Property Name="ID_CUENTA" Type="Int32" Nullable="false" />
+    <Property Name="CODIGO_SEGURIDAD" Type="Int32" />
+    <Property Name="PASSWORD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ID_USUARIOFK" Type="Int32" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.FK_ID_USUARIOEASYPAY" FromRole="EASYPAY" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="TARJETA">
+    <Key>
+      <PropertyRef Name="ID_TARJETA" />
+    </Key>
+    <Property Name="ID_TARJETA" Type="Int32" Nullable="false" />
+    <Property Name="MES_TARJETA" Type="Int32" />
+    <Property Name="YEAR_TARJETA" Type="Int32" />
+    <Property Name="CVV_TARJETA" Type="Int32" />
+    <Property Name="MONTO_TARJETA" Type="Int32" />
+    <Property Name="TIPO_TARJETA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ID_USUARIOFK" Type="Int32" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.FK_ID_USUARIO" FromRole="TARJETA" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CLAVE_USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COLOR_FAVORITO_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EASYPAY" Relationship="Self.FK_ID_USUARIOEASYPAY" FromRole="USUARIO" ToRole="EASYPAY" />
+    <NavigationProperty Name="TARJETA" Relationship="Self.FK_ID_USUARIO" FromRole="USUARIO" ToRole="TARJETA" />
+  </EntityType>
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_ID_USUARIOEASYPAY">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EASYPAY" Type="Self.EASYPAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="EASYPAY">
+        <PropertyRef Name="ID_USUARIOFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TARJETA" Type="Self.TARJETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TARJETA">
+        <PropertyRef Name="ID_USUARIOFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EasyPayEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EASYPAY" EntityType="Self.EASYPAY" />
+    <EntitySet Name="TARJETA" EntityType="Self.TARJETA" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+    <AssociationSet Name="FK_ID_USUARIOEASYPAY" Association="Self.FK_ID_USUARIOEASYPAY">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="EASYPAY" EntitySet="EASYPAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USUARIO" Association="Self.FK_ID_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="TARJETA" EntitySet="TARJETA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -20,24 +20,12 @@
     <Property Name="DESCRIPCION_BITACORA" Type="varchar" MaxLength="30" />
     <Property Name="DETALLE_BITACORA" Type="varchar(max)" />
   </EntityType>
-  <EntityType Name="CLIENTE">
-    <Key>
-      <PropertyRef Name="ID_CLIENTE" />
-    </Key>
-    <Property Name="ID_CLIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NOMBRE_CLIENTE" Type="varchar" MaxLength="30" />
-    <Property Name="PRIMER_APELLIDO_CLIENTE" Type="varchar" MaxLength="30" />
-    <Property Name="SEGUNDO_APELLIDO_CLIENTE" Type="varchar" MaxLength="30" />
-    <Property Name="EMAIL_CLIENTE" Type="varchar" MaxLength="30" />
-    <Property Name="USERNAME_CLIENTE" Type="varchar" MaxLength="30" />
-    <Property Name="CLAVE_CLIENTE" Type="varchar" MaxLength="30" />
-  </EntityType>
   <EntityType Name="COMPRAR_BOLETO">
     <Key>
       <PropertyRef Name="ID_BOLETO" />
     </Key>
     <Property Name="ID_BOLETO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ID_CLIENTEFK" Type="int" />
+    <Property Name="ID_USUARIOFK" Type="int" />
     <Property Name="FECHA_COMPRAR_BOLETO" Type="varchar" MaxLength="30" />
     <Property Name="PAGO_COMPRAR_BOLETO" Type="varchar" MaxLength="30" />
     <Property Name="MONTO_COMPRAR_BOLETO" Type="int" />
@@ -128,7 +116,7 @@
     <Property Name="BOOKING_ID" Type="varchar" MaxLength="50" />
     <Property Name="CANTIDAD_RESERVAR_BOLETOS" Type="varchar" MaxLength="30" />
     <Property Name="TOTAL_RESERVAR_BOLETO" Type="varchar" MaxLength="30" />
-    <Property Name="ID_CLIENTEFK" Type="int" />
+    <Property Name="ID_USUARIOFK" Type="int" />
   </EntityType>
   <EntityType Name="ROL">
     <Key>
@@ -146,7 +134,7 @@
     <Property Name="YEAR_TARJETA" Type="int" />
     <Property Name="CVV_TARJETA" Type="int" />
     <Property Name="TIPO_TARJETA" Type="varchar" MaxLength="30" />
-    <Property Name="ID_CLIENTEFK" Type="int" />
+    <Property Name="ID_USUARIOFK" Type="int" />
   </EntityType>
   <EntityType Name="USUARIO">
     <Key>
@@ -156,8 +144,7 @@
     <Property Name="NOMBRE_USUARIO" Type="varchar" MaxLength="30" />
     <Property Name="CLAVE_USUARIO" Type="varchar" MaxLength="30" />
     <Property Name="EMAIL_USUARIO" Type="varchar" MaxLength="50" />
-    <Property Name="PREGUNTA_SEGURIDAD_USUARIO" Type="varchar" MaxLength="50" />
-    <Property Name="RESPUESTA_SEGURIDAD_USUARIO" Type="varchar" MaxLength="50" />
+    <Property Name="COLOR_FAVORITO_USUARIO" Type="varchar" MaxLength="50" />
     <Property Name="ID_ROLFK" Type="int" />
   </EntityType>
   <EntityType Name="VUELO_LLEGADA">
@@ -228,48 +215,6 @@ advertencia 6002: La tabla o vista 'serviciosweb.sys.database_firewall_rules' no
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ID_CLIENTE">
-    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="TARJETA" Type="Self.TARJETA" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CLIENTE">
-        <PropertyRef Name="ID_CLIENTE" />
-      </Principal>
-      <Dependent Role="TARJETA">
-        <PropertyRef Name="ID_CLIENTEFK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ID_CLIENTEFKC">
-    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="COMPRAR_BOLETO" Type="Self.COMPRAR_BOLETO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CLIENTE">
-        <PropertyRef Name="ID_CLIENTE" />
-      </Principal>
-      <Dependent Role="COMPRAR_BOLETO">
-        <PropertyRef Name="ID_CLIENTEFK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ID_CLIENTEFKR">
-    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="RESERVAR_BOLETO" Type="Self.RESERVAR_BOLETO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CLIENTE">
-        <PropertyRef Name="ID_CLIENTE" />
-      </Principal>
-      <Dependent Role="RESERVAR_BOLETO">
-        <PropertyRef Name="ID_CLIENTEFK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_ID_PUERTAFK">
     <End Role="PUERTA" Type="Self.PUERTA" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -312,6 +257,48 @@ advertencia 6002: La tabla o vista 'serviciosweb.sys.database_firewall_rules' no
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ID_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TARJETA" Type="Self.TARJETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TARJETA">
+        <PropertyRef Name="ID_USUARIOFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_USUARIOFKC">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="COMPRAR_BOLETO" Type="Self.COMPRAR_BOLETO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="COMPRAR_BOLETO">
+        <PropertyRef Name="ID_USUARIOFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ID_USUARIOFKR">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RESERVAR_BOLETO" Type="Self.RESERVAR_BOLETO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="RESERVAR_BOLETO">
+        <PropertyRef Name="ID_USUARIOFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_IMAGEN_AEROLINEA">
     <End Role="IMAGEN_AEROLINEA" Type="Self.IMAGEN_AEROLINEA" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -343,7 +330,6 @@ advertencia 6002: La tabla o vista 'serviciosweb.sys.database_firewall_rules' no
   <EntityContainer Name="servicioswebModelStoreContainer">
     <EntitySet Name="AEROLINEA" EntityType="Self.AEROLINEA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BITACORA" EntityType="Self.BITACORA" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="COMPRAR_BOLETO" EntityType="Self.COMPRAR_BOLETO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CONSECUTIVO_AEROLINEA" EntityType="Self.CONSECUTIVO_AEROLINEA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CONSECUTIVO_PAIS" EntityType="Self.CONSECUTIVO_PAIS" Schema="dbo" store:Type="Tables" />
@@ -378,18 +364,6 @@ advertencia 6002: La tabla o vista 'serviciosweb.sys.database_firewall_rules' no
       <End Role="AEROLINEA" EntitySet="AEROLINEA" />
       <End Role="VUELO_SALIDA" EntitySet="VUELO_SALIDA" />
     </AssociationSet>
-    <AssociationSet Name="FK_ID_CLIENTE" Association="Self.FK_ID_CLIENTE">
-      <End Role="CLIENTE" EntitySet="CLIENTE" />
-      <End Role="TARJETA" EntitySet="TARJETA" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ID_CLIENTEFKC" Association="Self.FK_ID_CLIENTEFKC">
-      <End Role="CLIENTE" EntitySet="CLIENTE" />
-      <End Role="COMPRAR_BOLETO" EntitySet="COMPRAR_BOLETO" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ID_CLIENTEFKR" Association="Self.FK_ID_CLIENTEFKR">
-      <End Role="CLIENTE" EntitySet="CLIENTE" />
-      <End Role="RESERVAR_BOLETO" EntitySet="RESERVAR_BOLETO" />
-    </AssociationSet>
     <AssociationSet Name="FK_ID_PUERTAFK" Association="Self.FK_ID_PUERTAFK">
       <End Role="PUERTA" EntitySet="PUERTA" />
       <End Role="VUELO_LLEGADA" EntitySet="VUELO_LLEGADA" />
@@ -401,6 +375,18 @@ advertencia 6002: La tabla o vista 'serviciosweb.sys.database_firewall_rules' no
     <AssociationSet Name="FK_ID_ROLFK" Association="Self.FK_ID_ROLFK">
       <End Role="ROL" EntitySet="ROL" />
       <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USUARIO" Association="Self.FK_ID_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="TARJETA" EntitySet="TARJETA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USUARIOFKC" Association="Self.FK_ID_USUARIOFKC">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="COMPRAR_BOLETO" EntitySet="COMPRAR_BOLETO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USUARIOFKR" Association="Self.FK_ID_USUARIOFKR">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="RESERVAR_BOLETO" EntitySet="RESERVAR_BOLETO" />
     </AssociationSet>
     <AssociationSet Name="FK_IMAGEN_AEROLINEA" Association="Self.FK_IMAGEN_AEROLINEA">
       <End Role="IMAGEN_AEROLINEA" EntitySet="IMAGEN_AEROLINEA" />

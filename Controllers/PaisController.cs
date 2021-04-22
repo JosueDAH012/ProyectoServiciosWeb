@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using V_VuelosServiciosWeb.Models;
 
@@ -47,7 +48,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // POST: Pais/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ID_PAIS,NOMBRE_PAIS,ID_IMAGEN_PAISFK")] PAIS pAIS)
         {
@@ -81,7 +82,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // POST: Pais/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "ID_PAIS,NOMBRE_PAIS,ID_IMAGEN_PAISFK")] PAIS pAIS)
         {
@@ -111,7 +112,7 @@ namespace V_VuelosServiciosWeb.Controllers
         }
 
         // POST: Pais/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [System.Web.Mvc.HttpPost, System.Web.Mvc.ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(string id)
         {
@@ -128,6 +129,55 @@ namespace V_VuelosServiciosWeb.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+    }
+
+    public class PaissController : GeneralController
+    {
+        [System.Web.Mvc.HttpGet]
+        [System.Web.Mvc.Route("GetConPais")]
+        public IEnumerable<CONSECUTIVO_PAIS> GetConPais()
+        {
+
+            var con = db.CONSECUTIVO_PAIS.ToList();
+
+            return con;
+
+        }
+
+        [System.Web.Mvc.HttpPost]
+        [System.Web.Mvc.Route("InsertConPais")]
+        public IHttpActionResult InsertConPais([FromBody] CONSECUTIVO_PAIS con)
+        {
+            if (ModelState.IsValid)
+            {
+                db.CONSECUTIVO_PAIS.Add(con);
+                db.SaveChanges();
+                return Ok(con);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+
+        [System.Web.Mvc.HttpDelete]
+        [System.Web.Mvc.Route("DeleteConPais")]
+        public IHttpActionResult EliminarPais(int id_con)
+        {
+            var con = db.CONSECUTIVO_PAIS.Find(id_con);
+
+            if (con != null)
+            {
+                db.CONSECUTIVO_PAIS.Remove(con);
+                db.SaveChanges();
+                return Ok(con);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

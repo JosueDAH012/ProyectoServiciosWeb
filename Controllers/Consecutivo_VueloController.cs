@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using V_VuelosServiciosWeb.Models;
 
@@ -45,7 +46,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // POST: Consecutivo_Vuelo/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ID_CONSECUTIVO_VUELO,CONSECUTIVO_VUELO1,PREFIJO_VUELO,RANGO_INICIAL_VUELO,RANGO_FINAL_VUELO")] CONSECUTIVO_VUELO cONSECUTIVO_VUELO)
         {
@@ -77,7 +78,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // POST: Consecutivo_Vuelo/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "ID_CONSECUTIVO_VUELO,CONSECUTIVO_VUELO1,PREFIJO_VUELO,RANGO_INICIAL_VUELO,RANGO_FINAL_VUELO")] CONSECUTIVO_VUELO cONSECUTIVO_VUELO)
         {
@@ -106,7 +107,7 @@ namespace V_VuelosServiciosWeb.Controllers
         }
 
         // POST: Consecutivo_Vuelo/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [System.Web.Mvc.HttpPost, System.Web.Mvc.ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
@@ -123,6 +124,55 @@ namespace V_VuelosServiciosWeb.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+    }
+
+    public class VuelosController : GeneralController
+    {
+        [System.Web.Mvc.HttpGet]
+        [System.Web.Mvc.Route("GetConVuelo")]
+        public IEnumerable<CONSECUTIVO_VUELO> GetConVuelo()
+        {
+
+            var con = db.CONSECUTIVO_VUELO.ToList();
+
+            return con;
+
+        }
+
+        [System.Web.Mvc.HttpPost]
+        [System.Web.Mvc.Route("InsertConVuelo")]
+        public IHttpActionResult InsertConVuelo([FromBody] CONSECUTIVO_VUELO con)
+        {
+            if (ModelState.IsValid)
+            {
+                db.CONSECUTIVO_VUELO.Add(con);
+                db.SaveChanges();
+                return Ok(con);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+
+        [System.Web.Mvc.HttpDelete]
+        [System.Web.Mvc.Route("DeleteConVuelo")]
+        public IHttpActionResult EliminarVuelo(int id_con)
+        {
+            var con = db.CONSECUTIVO_VUELO.Find(id_con);
+
+            if (con != null)
+            {
+                db.CONSECUTIVO_VUELO.Remove(con);
+                db.SaveChanges();
+                return Ok(con);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

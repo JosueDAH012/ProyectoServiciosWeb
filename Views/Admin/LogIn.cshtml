@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "LogIn";
+    ViewBag.Title = "Login";
     Layout = "~/Views/Shared/LayoutAdmiLogin.cshtml";
 }
 
@@ -29,7 +29,7 @@
                                    value="Login with Facebook" class="btn btn-success" />
                             <div class="mt-4">
                                 <div class="d-flex justify-content-center links">
-                                    ¿Tiene cuenta? <a href="@Url.Action("Create", "Usuario")" class="ml-2">Registrarse</a>
+                                    ¿Tiene cuenta? <a href="@Url.Action("Create", "UsuarioS")" class="ml-2">Registrarse</a>
                                 </div>
                                 <div class="d-flex justify-content-center links">
                                     ¿Olvido su contraseña? <a href="@Url.Action("RestablecerPwd", "Admin")" class="ml-2">RestablecerContraseña</a>
@@ -46,68 +46,4 @@
         </div>
     </div>
 </div>
-<!--
-<script type="text/javascript">
-    $(document).ready(function () {
 
-
-
-        $('#login').click(function () {
-            $.ajax({
-                // Post username, password & the grant type to /token
-                url: '/token',
-                method: 'POST',
-                contentType: 'application/json',
-                data: {
-                    username: $('#usuario').val(),
-                    password: $('#inputPassword').val(),
-                    grant_type: 'password'
-                },
-                // When the request completes successfully, save the
-                // access token in the browser session storage and
-                // redirect the user to Data.html page. We do not have
-                // this page yet. So please add it to the
-                // EmployeeService project before running it
-                success: function (response) {
-                    sessionStorage.setItem("accessToken", response.access_token);
-                    window.location.href = "Data.html";
-                },
-                // Display errors if any in the Bootstrap alert <div>
-                error: function (jqXHR) {
-                    $('#divErrorText').text(jqXHR.responseText);
-                    $('#divError').show('fade');
-                }
-            });
-        });
-    });
-</script>
-
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-
-
-        // Save the new user details
-        $('#inicio').click(function () {
-            $.ajax({
-                url: '/api/Cliente',
-                method: 'GET',
-                data: {
-                    email: $('#txtEmail').val(),
-                    password: $('#txtPassword').val(),
-                    confirmPassword: $('#txtConfirmPassword').val()
-                },
-                success: function () {
-                    $('#successModal').modal('show');
-                },
-                error: function (jqXHR) {
-                    $('#divErrorText').text(jqXHR.responseText);
-                    $('#divError').show('fade');
-                }
-            });
-        });
-    });
-</script>
--->

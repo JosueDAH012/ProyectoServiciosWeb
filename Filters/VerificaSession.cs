@@ -25,17 +25,13 @@ namespace V_VuelosServiciosWeb.Filters
 
                     if (filterContext.Controller is AccesoController == false)
                     {
-                       // filterContext.HttpContext.Response.Redirect("/Admin/PaginaPrincipal");
+                       //filterContext.HttpContext.Response.Redirect("~/Home/Index");
                     }
-
-
-
                 }
-
             }
             catch (Exception)
             {
-               // filterContext.Result = new RedirectResult("~/Acceso/Login");
+               //filterContext.Result = new RedirectResult("~/Admin/PaginaPrincipal");
             }
 
         }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using V_VuelosServiciosWeb.Models;
 
@@ -45,7 +46,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // POST: Error/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ID_ERROR,FECHA_ERROR,MENSAJE_ERROR")] ERROR eRROR)
         {
@@ -77,7 +78,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // POST: Error/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "ID_ERROR,FECHA_ERROR,MENSAJE_ERROR")] ERROR eRROR)
         {
@@ -106,7 +107,7 @@ namespace V_VuelosServiciosWeb.Controllers
         }
 
         // POST: Error/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [System.Web.Mvc.HttpPost, System.Web.Mvc.ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
@@ -123,6 +124,43 @@ namespace V_VuelosServiciosWeb.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+    }
+
+    public class ErrorsController : GeneralController
+    {
+        [System.Web.Mvc.HttpGet]
+        [System.Web.Mvc.Route("GetError")]
+        public IEnumerable<ERROR> GetError()
+        {
+            var error = db.ERROR.ToList();
+
+            return error;
+        }
+
+        [System.Web.Mvc.HttpGet]
+        [System.Web.Mvc.Route("GetErrorID")]
+        public IEnumerable<ERROR> GetErrorID(int ID_ERROR)
+        {
+            var error = db.ERROR.Where(x => x.ID_ERROR == ID_ERROR).ToList();
+
+            return error;
+        }
+
+        [System.Web.Mvc.HttpPost]
+        [System.Web.Mvc.Route("InsertError")]
+        public IHttpActionResult InsertError([FromBody] ERROR error)
+        {
+            if (ModelState.IsValid)
+            {
+                db.ERROR.Add(error);
+                db.SaveChanges();
+                return Ok(error);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }

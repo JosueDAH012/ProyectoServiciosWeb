@@ -37,11 +37,7 @@ namespace V_VuelosServiciosWeb.Controllers
                             return RedirectToAction("PaginaPrincipalCliente", "Admin");
                         }
                     }
-
-                    
-
                 }
-
                 return RedirectToAction("LogIn", "Admin");
             }
             catch (Exception ex)

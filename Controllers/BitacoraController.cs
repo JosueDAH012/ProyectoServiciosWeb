@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using V_VuelosServiciosWeb.Models;
 
@@ -45,7 +46,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // POST: Bitacora/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ID_BITACORA,USUARIO_BITACORA,FECHA_BITACORA,CODIGO_BITACORA,TIPO_BITACORA,DESCRIPCION_BITACORA,DETALLE_BITACORA")] BITACORA bITACORA)
         {
@@ -77,7 +78,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // POST: Bitacora/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "ID_BITACORA,USUARIO_BITACORA,FECHA_BITACORA,CODIGO_BITACORA,TIPO_BITACORA,DESCRIPCION_BITACORA,DETALLE_BITACORA")] BITACORA bITACORA)
         {
@@ -106,7 +107,7 @@ namespace V_VuelosServiciosWeb.Controllers
         }
 
         // POST: Bitacora/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [System.Web.Mvc.HttpPost, System.Web.Mvc.ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
@@ -124,5 +125,42 @@ namespace V_VuelosServiciosWeb.Controllers
             }
             base.Dispose(disposing);
         }
+    }
+
+    public class BitacorasController : GeneralController
+    {
+        [System.Web.Mvc.HttpGet]
+        [System.Web.Mvc.Route("GetBitacora")]
+        public IEnumerable<BITACORA> GetBitacota()
+        {
+            var bitacora = db.BITACORA.ToList();
+            return bitacora;
+        }
+
+        [System.Web.Mvc.HttpGet]
+        [System.Web.Mvc.Route("GetBitacoraID")]
+        public IEnumerable<BITACORA> GetBitacotaID(int ID_BITACORA)
+        {
+            var bitacora = db.BITACORA.Where(x => x.ID_BITACORA == ID_BITACORA).ToList();
+
+            return bitacora;
+        }
+
+        [System.Web.Mvc.HttpPost]
+        [System.Web.Mvc.Route("InsertBitacora")]
+        public IHttpActionResult InsertBitacora([FromBody] BITACORA bitacora)
+        {
+            if (ModelState.IsValid)
+            {
+                db.BITACORA.Add(bitacora);
+                db.SaveChanges();
+                return Ok(bitacora);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }

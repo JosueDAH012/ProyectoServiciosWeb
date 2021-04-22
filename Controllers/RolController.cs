@@ -125,4 +125,27 @@ namespace V_VuelosServiciosWeb.Controllers
             base.Dispose(disposing);
         }
     }
+
+    public class RolsController : GeneralController
+    {
+        // GET: Rol
+        [HttpGet]
+        public IEnumerable<ROL> GetRol()
+        {
+            var rol = db.ROL.ToList();
+
+            return rol;
+        }
+
+        // GET: Rol
+        [HttpGet]
+        public IEnumerable<ROL> GetRolID(int id_rol)
+        {
+
+            var rol = db.ROL.Where(x => x.ID_ROL == id_rol).ToList();
+
+            return rol;
+
+        }
+    }
 }
