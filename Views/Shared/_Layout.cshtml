@@ -41,7 +41,7 @@
                                 Consecutivos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                
+
                                 <a class="dropdown-item" href="@Url.Action("Index", "Consecutivo_Vuelo")">Vuelos</a>
                                 <a class="dropdown-item" href="@Url.Action("Index","Consecutivo_Pais")">Paises</a>
                                 <a class="dropdown-item" href="@Url.Action("Index", "Consecutivo_Aerolinea")">Aerolineas</a>
@@ -54,7 +54,7 @@
                                 Consultas
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                
+
 
                                 <a class="dropdown-item" href="@Url.Action("Index", "Aerolinea")">Aerolineas</a>
 
@@ -72,7 +72,7 @@
                                 <path fill-rule="evenodd"
                                       d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
                             </svg>
-                            <!--<div>Welcome @(Request.IsAuthenticated? HttpContext.Current.User.Identity.Name : "")  (User) </div>-->
+                            <a class="text-black-50" href="@Url.Action("PaginaPrincipalCliente","Admin")">Cliente</a>
                         </span>
                         <a href="@Url.Action("Index","Home")" class="btn btn-danger btn-sm ml-3" role="button" aria-pressed="true">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-square" fill="currentColor"
@@ -99,7 +99,7 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

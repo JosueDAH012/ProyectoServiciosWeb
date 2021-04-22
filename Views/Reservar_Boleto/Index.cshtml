@@ -4,49 +4,51 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutCliente.cshtml";
 }
+<div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); width: device-width;height: device-height; ">
 
-<h2>Index</h2>
+    <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BOOKING_ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CANTIDAD_RESERVAR_BOLETOS)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TOTAL_RESERVAR_BOLETO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.USUARIO.NOMBRE_USUARIO)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BOOKING_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CANTIDAD_RESERVAR_BOLETOS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TOTAL_RESERVAR_BOLETO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.USUARIO.NOMBRE_USUARIO)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BOOKING_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CANTIDAD_RESERVAR_BOLETOS)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TOTAL_RESERVAR_BOLETO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.USUARIO.NOMBRE_USUARIO)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_RESERVAR_BOLETO }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_RESERVAR_BOLETO }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_RESERVAR_BOLETO })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BOOKING_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CANTIDAD_RESERVAR_BOLETOS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TOTAL_RESERVAR_BOLETO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.USUARIO.NOMBRE_USUARIO)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID_RESERVAR_BOLETO }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID_RESERVAR_BOLETO }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID_RESERVAR_BOLETO })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>

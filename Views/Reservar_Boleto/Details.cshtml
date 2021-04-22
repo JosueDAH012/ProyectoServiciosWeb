@@ -4,48 +4,49 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/LayoutCliente.cshtml";
 }
+<div class="bg-image" style=" background-image: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); width: device-width;height: device-height; ">
 
-<h2>Details</h2>
+    <h2>Details</h2>
 
-<div>
-    <h4>RESERVAR_BOLETO</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BOOKING_ID)
-        </dt>
+    <div>
+        <h4>RESERVAR_BOLETO</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.BOOKING_ID)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.BOOKING_ID)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.BOOKING_ID)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CANTIDAD_RESERVAR_BOLETOS)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CANTIDAD_RESERVAR_BOLETOS)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CANTIDAD_RESERVAR_BOLETOS)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.CANTIDAD_RESERVAR_BOLETOS)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TOTAL_RESERVAR_BOLETO)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.TOTAL_RESERVAR_BOLETO)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TOTAL_RESERVAR_BOLETO)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TOTAL_RESERVAR_BOLETO)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.USUARIO.NOMBRE_USUARIO)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.USUARIO.NOMBRE_USUARIO)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.USUARIO.NOMBRE_USUARIO)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.USUARIO.NOMBRE_USUARIO)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_RESERVAR_BOLETO }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_RESERVAR_BOLETO }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

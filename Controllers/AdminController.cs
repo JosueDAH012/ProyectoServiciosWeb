@@ -84,7 +84,7 @@ namespace V_VuelosServiciosWeb.Controllers
             }
         }
 
-        private servicioswebEntities1 db = new servicioswebEntities1();
+        private servicioswebEntities2 db = new servicioswebEntities2();
 
         // GET: Usuario
         public async Task<ActionResult> Index()

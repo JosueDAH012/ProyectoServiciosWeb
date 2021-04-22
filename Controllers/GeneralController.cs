@@ -12,11 +12,11 @@ namespace V_VuelosServiciosWeb.Controllers
     public class GeneralController : ApiController
     {
 
-        public servicioswebEntities1 db;
+        public servicioswebEntities2 db;
 
         public GeneralController()
         {
-            db = new servicioswebEntities1();
+            db = new servicioswebEntities2();
         }
 
     }

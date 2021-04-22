@@ -14,7 +14,7 @@ namespace V_VuelosServiciosWeb.Controllers
 {
     public class PaisController : Controller
     {
-        private servicioswebEntities1 db = new servicioswebEntities1();
+        private servicioswebEntities2 db = new servicioswebEntities2();
 
         // GET: Pais
         public async Task<ActionResult> Index()

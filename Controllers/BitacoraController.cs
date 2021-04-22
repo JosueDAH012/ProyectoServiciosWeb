@@ -14,7 +14,7 @@ namespace V_VuelosServiciosWeb.Controllers
 {
     public class BitacoraController : Controller
     {
-        private servicioswebEntities1 db = new servicioswebEntities1();
+        private servicioswebEntities2 db = new servicioswebEntities2();
 
         // GET: Bitacora
         public async Task<ActionResult> Index()

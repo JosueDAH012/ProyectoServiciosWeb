@@ -13,10 +13,10 @@ namespace V_VuelosServiciosWeb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class servicioswebEntities1 : DbContext
+    public partial class servicioswebEntities2 : DbContext
     {
-        public servicioswebEntities1()
-            : base("name=servicioswebEntities1")
+        public servicioswebEntities2()
+            : base("name=servicioswebEntities2")
         {
         }
     

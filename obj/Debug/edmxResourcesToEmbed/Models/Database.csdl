@@ -345,7 +345,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="servicioswebEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="servicioswebEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AEROLINEA" EntityType="Self.AEROLINEA" />
     <EntitySet Name="BITACORA" EntityType="Self.BITACORA" />
     <EntitySet Name="COMPRAR_BOLETO" EntityType="Self.COMPRAR_BOLETO" />

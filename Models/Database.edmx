@@ -752,7 +752,7 @@ advertencia 6002: La tabla o vista 'serviciosweb.sys.database_firewall_rules' no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="servicioswebEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="servicioswebEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AEROLINEA" EntityType="Self.AEROLINEA" />
           <EntitySet Name="BITACORA" EntityType="Self.BITACORA" />
           <EntitySet Name="COMPRAR_BOLETO" EntityType="Self.COMPRAR_BOLETO" />
@@ -818,7 +818,7 @@ advertencia 6002: La tabla o vista 'serviciosweb.sys.database_firewall_rules' no
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="servicioswebModelStoreContainer" CdmEntityContainer="servicioswebEntities1">
+        <EntityContainerMapping StorageEntityContainer="servicioswebModelStoreContainer" CdmEntityContainer="servicioswebEntities2">
           <EntitySetMapping Name="AEROLINEA">
             <EntityTypeMapping TypeName="servicioswebModel.AEROLINEA">
               <MappingFragment StoreEntitySet="AEROLINEA">

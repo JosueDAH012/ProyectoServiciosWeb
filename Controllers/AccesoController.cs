@@ -19,7 +19,7 @@ namespace V_VuelosServiciosWeb.Controllers
         {
             try
             {
-                using (Models.servicioswebEntities1 db = new Models.servicioswebEntities1())
+                using (Models.servicioswebEntities2 db = new Models.servicioswebEntities2())
                 {
                     var oUser = (from d in db.USUARIO
                                  where d.EMAIL_USUARIO == usuario.Trim() && d.CLAVE_USUARIO == inputPassword.Trim()

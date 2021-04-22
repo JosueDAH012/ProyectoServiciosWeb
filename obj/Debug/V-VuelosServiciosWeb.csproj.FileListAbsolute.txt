@@ -662,7 +662,6 @@ C:\Users\jadri\Documents\GitHub\ProyectoServiciosWeb\obj\Debug\V-VuelosServicios
 C:\Users\jadri\Documents\GitHub\ProyectoServiciosWeb\obj\Debug\V-VuelosServiciosWeb.dll
 C:\Users\jadri\Documents\GitHub\ProyectoServiciosWeb\obj\Debug\V-VuelosServiciosWeb.pdb
 F:\Users\jucal\Documents\GitHub\ProyectoServiciosWeb\obj\Debug\V-VuelosServiciosWeb.csproj.CoreCompileInputs.cache
-F:\Users\jucal\Documents\GitHub\ProyectoServiciosWeb\obj\Debug\V-VuelosServiciosWeb.csprojAssemblyReference.cache
 F:\Users\jucal\Documents\GitHub\ProyectoServiciosWeb\bin\V-VuelosServiciosWeb.dll.config
 F:\Users\jucal\Documents\GitHub\ProyectoServiciosWeb\bin\V-VuelosServiciosWeb.dll
 F:\Users\jucal\Documents\GitHub\ProyectoServiciosWeb\bin\V-VuelosServiciosWeb.pdb
