@@ -13,12 +13,12 @@ namespace V_VuelosServiciosWeb.Controllers
 {
     public class Reservar_BoletoController : Controller
     {
-        private servicioswebEntities db = new servicioswebEntities();
+        private servicioswebEntities1 db = new servicioswebEntities1();
 
         // GET: Reservar_Boleto
         public async Task<ActionResult> Index()
         {
-            var rESERVAR_BOLETO = db.RESERVAR_BOLETO.Include(r => r.CLIENTE);
+            var rESERVAR_BOLETO = db.RESERVAR_BOLETO.Include(r => r.USUARIO);
             return View(await rESERVAR_BOLETO.ToListAsync());
         }
 
@@ -40,7 +40,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // GET: Reservar_Boleto/Create
         public ActionResult Create()
         {
-            ViewBag.ID_CLIENTEFK = new SelectList(db.CLIENTE, "ID_CLIENTE", "NOMBRE_CLIENTE");
+            ViewBag.ID_USUARIOFK = new SelectList(db.USUARIO, "ID_USUARIO", "NOMBRE_USUARIO");
             return View();
         }
 
@@ -49,7 +49,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID_RESERVAR_BOLETO,BOOKING_ID,CANTIDAD_RESERVAR_BOLETOS,TOTAL_RESERVAR_BOLETO,ID_CLIENTEFK")] RESERVAR_BOLETO rESERVAR_BOLETO)
+        public async Task<ActionResult> Create([Bind(Include = "ID_RESERVAR_BOLETO,BOOKING_ID,CANTIDAD_RESERVAR_BOLETOS,TOTAL_RESERVAR_BOLETO,ID_USUARIOFK")] RESERVAR_BOLETO rESERVAR_BOLETO)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace V_VuelosServiciosWeb.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ID_CLIENTEFK = new SelectList(db.CLIENTE, "ID_CLIENTE", "NOMBRE_CLIENTE", rESERVAR_BOLETO.ID_CLIENTEFK);
+            ViewBag.ID_USUARIOFK = new SelectList(db.USUARIO, "ID_USUARIO", "NOMBRE_USUARIO", rESERVAR_BOLETO.ID_USUARIOFK);
             return View(rESERVAR_BOLETO);
         }
 
@@ -74,7 +74,7 @@ namespace V_VuelosServiciosWeb.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ID_CLIENTEFK = new SelectList(db.CLIENTE, "ID_CLIENTE", "NOMBRE_CLIENTE", rESERVAR_BOLETO.ID_CLIENTEFK);
+            ViewBag.ID_USUARIOFK = new SelectList(db.USUARIO, "ID_USUARIO", "NOMBRE_USUARIO", rESERVAR_BOLETO.ID_USUARIOFK);
             return View(rESERVAR_BOLETO);
         }
 
@@ -83,7 +83,7 @@ namespace V_VuelosServiciosWeb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID_RESERVAR_BOLETO,BOOKING_ID,CANTIDAD_RESERVAR_BOLETOS,TOTAL_RESERVAR_BOLETO,ID_CLIENTEFK")] RESERVAR_BOLETO rESERVAR_BOLETO)
+        public async Task<ActionResult> Edit([Bind(Include = "ID_RESERVAR_BOLETO,BOOKING_ID,CANTIDAD_RESERVAR_BOLETOS,TOTAL_RESERVAR_BOLETO,ID_USUARIOFK")] RESERVAR_BOLETO rESERVAR_BOLETO)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace V_VuelosServiciosWeb.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.ID_CLIENTEFK = new SelectList(db.CLIENTE, "ID_CLIENTE", "NOMBRE_CLIENTE", rESERVAR_BOLETO.ID_CLIENTEFK);
+            ViewBag.ID_USUARIOFK = new SelectList(db.USUARIO, "ID_USUARIO", "NOMBRE_USUARIO", rESERVAR_BOLETO.ID_USUARIOFK);
             return View(rESERVAR_BOLETO);
         }
 

@@ -15,11 +15,11 @@ namespace V_VuelosServiciosWeb.Models
     public partial class COMPRAR_BOLETO
     {
         public int ID_BOLETO { get; set; }
-        public Nullable<int> ID_CLIENTEFK { get; set; }
+        public Nullable<int> ID_USUARIOFK { get; set; }
         public string FECHA_COMPRAR_BOLETO { get; set; }
         public string PAGO_COMPRAR_BOLETO { get; set; }
         public Nullable<int> MONTO_COMPRAR_BOLETO { get; set; }
     
-        public virtual CLIENTE CLIENTE { get; set; }
+        public virtual USUARIO USUARIO { get; set; }
     }
 }

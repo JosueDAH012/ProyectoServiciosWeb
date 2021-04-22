@@ -23,31 +23,16 @@
     <Property Name="DESCRIPCION_BITACORA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="DETALLE_BITACORA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="CLIENTE">
-    <Key>
-      <PropertyRef Name="ID_CLIENTE" />
-    </Key>
-    <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NOMBRE_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="PRIMER_APELLIDO_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="SEGUNDO_APELLIDO_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="EMAIL_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="USERNAME_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="CLAVE_CLIENTE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="TARJETA" Relationship="Self.FK_ID_CLIENTE" FromRole="CLIENTE" ToRole="TARJETA" />
-    <NavigationProperty Name="COMPRAR_BOLETO" Relationship="Self.FK_ID_CLIENTEFKC" FromRole="CLIENTE" ToRole="COMPRAR_BOLETO" />
-    <NavigationProperty Name="RESERVAR_BOLETO" Relationship="Self.FK_ID_CLIENTEFKR" FromRole="CLIENTE" ToRole="RESERVAR_BOLETO" />
-  </EntityType>
   <EntityType Name="COMPRAR_BOLETO">
     <Key>
       <PropertyRef Name="ID_BOLETO" />
     </Key>
     <Property Name="ID_BOLETO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_CLIENTEFK" Type="Int32" />
+    <Property Name="ID_USUARIOFK" Type="Int32" />
     <Property Name="FECHA_COMPRAR_BOLETO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="PAGO_COMPRAR_BOLETO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="MONTO_COMPRAR_BOLETO" Type="Int32" />
-    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_ID_CLIENTEFKC" FromRole="COMPRAR_BOLETO" ToRole="CLIENTE" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.FK_ID_USUARIOFKC" FromRole="COMPRAR_BOLETO" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="CONSECUTIVO_AEROLINEA">
     <Key>
@@ -140,8 +125,8 @@
     <Property Name="BOOKING_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CANTIDAD_RESERVAR_BOLETOS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="TOTAL_RESERVAR_BOLETO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="ID_CLIENTEFK" Type="Int32" />
-    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_ID_CLIENTEFKR" FromRole="RESERVAR_BOLETO" ToRole="CLIENTE" />
+    <Property Name="ID_USUARIOFK" Type="Int32" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.FK_ID_USUARIOFKR" FromRole="RESERVAR_BOLETO" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="ROL">
     <Key>
@@ -160,8 +145,8 @@
     <Property Name="YEAR_TARJETA" Type="Int32" />
     <Property Name="CVV_TARJETA" Type="Int32" />
     <Property Name="TIPO_TARJETA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="ID_CLIENTEFK" Type="Int32" />
-    <NavigationProperty Name="CLIENTE" Relationship="Self.FK_ID_CLIENTE" FromRole="TARJETA" ToRole="CLIENTE" />
+    <Property Name="ID_USUARIOFK" Type="Int32" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.FK_ID_USUARIO" FromRole="TARJETA" ToRole="USUARIO" />
   </EntityType>
   <EntityType Name="USUARIO">
     <Key>
@@ -174,7 +159,10 @@
     <Property Name="PREGUNTA_SEGURIDAD_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="RESPUESTA_SEGURIDAD_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ID_ROLFK" Type="Int32" />
+    <NavigationProperty Name="COMPRAR_BOLETO" Relationship="Self.FK_ID_USUARIOFKC" FromRole="USUARIO" ToRole="COMPRAR_BOLETO" />
+    <NavigationProperty Name="RESERVAR_BOLETO" Relationship="Self.FK_ID_USUARIOFKR" FromRole="USUARIO" ToRole="RESERVAR_BOLETO" />
     <NavigationProperty Name="ROL" Relationship="Self.FK_ID_ROLFK" FromRole="USUARIO" ToRole="ROL" />
+    <NavigationProperty Name="TARJETA" Relationship="Self.FK_ID_USUARIO" FromRole="USUARIO" ToRole="TARJETA" />
   </EntityType>
   <EntityType Name="VUELO_LLEGADA">
     <Key>
@@ -244,45 +232,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ID_CLIENTE">
-    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="TARJETA" Type="Self.TARJETA" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CLIENTE">
-        <PropertyRef Name="ID_CLIENTE" />
-      </Principal>
-      <Dependent Role="TARJETA">
-        <PropertyRef Name="ID_CLIENTEFK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ID_CLIENTEFKC">
-    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
+  <Association Name="FK_ID_USUARIOFKC">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
     </End>
     <End Role="COMPRAR_BOLETO" Type="Self.COMPRAR_BOLETO" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="CLIENTE">
-        <PropertyRef Name="ID_CLIENTE" />
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
       </Principal>
       <Dependent Role="COMPRAR_BOLETO">
-        <PropertyRef Name="ID_CLIENTEFK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ID_CLIENTEFKR">
-    <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="RESERVAR_BOLETO" Type="Self.RESERVAR_BOLETO" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CLIENTE">
-        <PropertyRef Name="ID_CLIENTE" />
-      </Principal>
-      <Dependent Role="RESERVAR_BOLETO">
-        <PropertyRef Name="ID_CLIENTEFK" />
+        <PropertyRef Name="ID_USUARIOFK" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -328,6 +288,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ID_USUARIOFKR">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RESERVAR_BOLETO" Type="Self.RESERVAR_BOLETO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="RESERVAR_BOLETO">
+        <PropertyRef Name="ID_USUARIOFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ID_ROLFK">
     <End Role="ROL" Type="Self.ROL" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -342,10 +316,23 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="servicioswebEntities" annotation:LazyLoadingEnabled="true">
+  <Association Name="FK_ID_USUARIO">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TARJETA" Type="Self.TARJETA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="TARJETA">
+        <PropertyRef Name="ID_USUARIOFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="servicioswebEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AEROLINEA" EntityType="Self.AEROLINEA" />
     <EntitySet Name="BITACORA" EntityType="Self.BITACORA" />
-    <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
     <EntitySet Name="COMPRAR_BOLETO" EntityType="Self.COMPRAR_BOLETO" />
     <EntitySet Name="CONSECUTIVO_AEROLINEA" EntityType="Self.CONSECUTIVO_AEROLINEA" />
     <EntitySet Name="CONSECUTIVO_PAIS" EntityType="Self.CONSECUTIVO_PAIS" />
@@ -374,17 +361,9 @@
       <End Role="IMAGEN_AEROLINEA" EntitySet="IMAGEN_AEROLINEA" />
       <End Role="AEROLINEA" EntitySet="AEROLINEA" />
     </AssociationSet>
-    <AssociationSet Name="FK_ID_CLIENTE" Association="Self.FK_ID_CLIENTE">
-      <End Role="CLIENTE" EntitySet="CLIENTE" />
-      <End Role="TARJETA" EntitySet="TARJETA" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ID_CLIENTEFKC" Association="Self.FK_ID_CLIENTEFKC">
-      <End Role="CLIENTE" EntitySet="CLIENTE" />
+    <AssociationSet Name="FK_ID_USUARIOFKC" Association="Self.FK_ID_USUARIOFKC">
+      <End Role="USUARIO" EntitySet="USUARIO" />
       <End Role="COMPRAR_BOLETO" EntitySet="COMPRAR_BOLETO" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ID_CLIENTEFKR" Association="Self.FK_ID_CLIENTEFKR">
-      <End Role="CLIENTE" EntitySet="CLIENTE" />
-      <End Role="RESERVAR_BOLETO" EntitySet="RESERVAR_BOLETO" />
     </AssociationSet>
     <AssociationSet Name="FK_IMAGEN_PAIS" Association="Self.FK_IMAGEN_PAIS">
       <End Role="IMAGEN_PAIS" EntitySet="IMAGEN_PAIS" />
@@ -398,9 +377,17 @@
       <End Role="PUERTA" EntitySet="PUERTA" />
       <End Role="VUELO_SALIDA" EntitySet="VUELO_SALIDA" />
     </AssociationSet>
+    <AssociationSet Name="FK_ID_USUARIOFKR" Association="Self.FK_ID_USUARIOFKR">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="RESERVAR_BOLETO" EntitySet="RESERVAR_BOLETO" />
+    </AssociationSet>
     <AssociationSet Name="FK_ID_ROLFK" Association="Self.FK_ID_ROLFK">
       <End Role="ROL" EntitySet="ROL" />
       <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ID_USUARIO" Association="Self.FK_ID_USUARIO">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="TARJETA" EntitySet="TARJETA" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

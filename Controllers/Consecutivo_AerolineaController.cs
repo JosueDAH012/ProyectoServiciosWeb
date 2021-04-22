@@ -13,7 +13,7 @@ namespace V_VuelosServiciosWeb.Controllers
 {
     public class Consecutivo_AerolineaController : Controller
     {
-        private servicioswebEntities db = new servicioswebEntities();
+        private servicioswebEntities1 db = new servicioswebEntities1();
 
         // GET: Consecutivo_Aerolinea
         public async Task<ActionResult> Index()

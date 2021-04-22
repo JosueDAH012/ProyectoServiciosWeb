@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="servicioswebModelStoreContainer" CdmEntityContainer="servicioswebEntities">
+  <EntityContainerMapping StorageEntityContainer="servicioswebModelStoreContainer" CdmEntityContainer="servicioswebEntities1">
     <EntitySetMapping Name="AEROLINEA">
       <EntityTypeMapping TypeName="servicioswebModel.AEROLINEA">
         <MappingFragment StoreEntitySet="AEROLINEA">
@@ -23,24 +23,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CLIENTE">
-      <EntityTypeMapping TypeName="servicioswebModel.CLIENTE">
-        <MappingFragment StoreEntitySet="CLIENTE">
-          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
-          <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE_CLIENTE" />
-          <ScalarProperty Name="PRIMER_APELLIDO_CLIENTE" ColumnName="PRIMER_APELLIDO_CLIENTE" />
-          <ScalarProperty Name="SEGUNDO_APELLIDO_CLIENTE" ColumnName="SEGUNDO_APELLIDO_CLIENTE" />
-          <ScalarProperty Name="EMAIL_CLIENTE" ColumnName="EMAIL_CLIENTE" />
-          <ScalarProperty Name="USERNAME_CLIENTE" ColumnName="USERNAME_CLIENTE" />
-          <ScalarProperty Name="CLAVE_CLIENTE" ColumnName="CLAVE_CLIENTE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="COMPRAR_BOLETO">
       <EntityTypeMapping TypeName="servicioswebModel.COMPRAR_BOLETO">
         <MappingFragment StoreEntitySet="COMPRAR_BOLETO">
           <ScalarProperty Name="ID_BOLETO" ColumnName="ID_BOLETO" />
-          <ScalarProperty Name="ID_CLIENTEFK" ColumnName="ID_CLIENTEFK" />
+          <ScalarProperty Name="ID_USUARIOFK" ColumnName="ID_USUARIOFK" />
           <ScalarProperty Name="FECHA_COMPRAR_BOLETO" ColumnName="FECHA_COMPRAR_BOLETO" />
           <ScalarProperty Name="PAGO_COMPRAR_BOLETO" ColumnName="PAGO_COMPRAR_BOLETO" />
           <ScalarProperty Name="MONTO_COMPRAR_BOLETO" ColumnName="MONTO_COMPRAR_BOLETO" />
@@ -141,7 +128,7 @@
           <ScalarProperty Name="BOOKING_ID" ColumnName="BOOKING_ID" />
           <ScalarProperty Name="CANTIDAD_RESERVAR_BOLETOS" ColumnName="CANTIDAD_RESERVAR_BOLETOS" />
           <ScalarProperty Name="TOTAL_RESERVAR_BOLETO" ColumnName="TOTAL_RESERVAR_BOLETO" />
-          <ScalarProperty Name="ID_CLIENTEFK" ColumnName="ID_CLIENTEFK" />
+          <ScalarProperty Name="ID_USUARIOFK" ColumnName="ID_USUARIOFK" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -161,7 +148,7 @@
           <ScalarProperty Name="YEAR_TARJETA" ColumnName="YEAR_TARJETA" />
           <ScalarProperty Name="CVV_TARJETA" ColumnName="CVV_TARJETA" />
           <ScalarProperty Name="TIPO_TARJETA" ColumnName="TIPO_TARJETA" />
-          <ScalarProperty Name="ID_CLIENTEFK" ColumnName="ID_CLIENTEFK" />
+          <ScalarProperty Name="ID_USUARIOFK" ColumnName="ID_USUARIOFK" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

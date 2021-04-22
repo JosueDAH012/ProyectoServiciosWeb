@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86ee620cb32048acbedae59d7e88eef5" Name="Diagram1">
+        <EntityTypeShape EntityType="servicioswebModel.AEROLINEA" Width="1.5" PointX="10" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.BITACORA" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.COMPRAR_BOLETO" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.CONSECUTIVO_AEROLINEA" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.CONSECUTIVO_PAIS" Width="1.5" PointX="7.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.CONSECUTIVO_PUERTA" Width="1.5" PointX="9.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.CONSECUTIVO_VUELO" Width="1.5" PointX="2.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.ERROR" Width="1.5" PointX="4.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.IMAGEN_AEROLINEA" Width="1.5" PointX="7.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.IMAGEN_PAIS" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.PAIS" Width="1.5" PointX="10" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.PUERTA" Width="1.5" PointX="10" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.RESERVAR_BOLETO" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.ROL" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.TARJETA" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.USUARIO" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.VUELO_LLEGADA" Width="1.5" PointX="12.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="servicioswebModel.VUELO_SALIDA" Width="1.5" PointX="15.25" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="servicioswebModel.FK_ID_AEROLINEAFK" ManuallyRouted="false" />
+        <AssociationConnector Association="servicioswebModel.FK_ID_AEROLINEAFKS" ManuallyRouted="false" />
+        <AssociationConnector Association="servicioswebModel.FK_IMAGEN_AEROLINEA" ManuallyRouted="false" />
+        <AssociationConnector Association="servicioswebModel.FK_ID_USUARIOFKC" ManuallyRouted="false" />
+        <AssociationConnector Association="servicioswebModel.FK_IMAGEN_PAIS" ManuallyRouted="false" />
+        <AssociationConnector Association="servicioswebModel.FK_ID_PUERTAFK" ManuallyRouted="false" />
+        <AssociationConnector Association="servicioswebModel.FK_ID_PUERTAFKS" ManuallyRouted="false" />
+        <AssociationConnector Association="servicioswebModel.FK_ID_USUARIOFKR" ManuallyRouted="false" />
+        <AssociationConnector Association="servicioswebModel.FK_ID_ROLFK" ManuallyRouted="false" />
+        <AssociationConnector Association="servicioswebModel.FK_ID_USUARIO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

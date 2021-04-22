@@ -13,7 +13,7 @@ namespace V_VuelosServiciosWeb.Controllers
 {
     public class RolController : Controller
     {
-        private servicioswebEntities db = new servicioswebEntities();
+        private servicioswebEntities1 db = new servicioswebEntities1();
 
         // GET: Rol
         public async Task<ActionResult> Index()

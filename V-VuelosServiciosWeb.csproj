@@ -243,7 +243,6 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AerolineaController.cs" />
     <Compile Include="Controllers\BitacoraController.cs" />
-    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\Comprar_BoletoController.cs" />
     <Compile Include="Controllers\Consecutivo_AerolineaController.cs" />
     <Compile Include="Controllers\Consecutivo_PaisController.cs" />
@@ -270,80 +269,74 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AEROLINEA.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BITACORA.cs">
-      <DependentUpon>Database.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CLIENTE.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\COMPRAR_BOLETO.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CONSECUTIVO_AEROLINEA.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CONSECUTIVO_PAIS.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CONSECUTIVO_PUERTA.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CONSECUTIVO_VUELO.cs">
-      <DependentUpon>Database.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Database.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Database.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\database_firewall_rules.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ERROR.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IMAGEN_AEROLINEA.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IMAGEN_PAIS.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\PAIS.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PUERTA.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RESERVAR_BOLETO.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ROL.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TARJETA.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\USUARIO.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VUELO_LLEGADA.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VUELO_SALIDA.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -389,15 +382,15 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="Models\Database.Context.tt">
+    <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Database.edmx</DependentUpon>
-      <LastGenOutput>Database.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Database.tt">
+    <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Database.edmx</DependentUpon>
-      <LastGenOutput>Database.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -436,12 +429,12 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <EntityDeploy Include="Models\Database.edmx">
+    <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Database.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Database.edmx.diagram">
-      <DependentUpon>Database.edmx</DependentUpon>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -592,21 +585,11 @@
     <Content Include="Views\Bitacora\Details.cshtml" />
     <Content Include="Views\Bitacora\Edit.cshtml" />
     <Content Include="Views\Bitacora\Index.cshtml" />
-    <Content Include="Views\COMPRAR_BOLETO\Create.cshtml" />
-    <Content Include="Views\COMPRAR_BOLETO\Delete.cshtml" />
-    <Content Include="Views\COMPRAR_BOLETO\Details.cshtml" />
-    <Content Include="Views\COMPRAR_BOLETO\Edit.cshtml" />
-    <Content Include="Views\COMPRAR_BOLETO\Index.cshtml" />
     <Content Include="Views\Consecutivo_Aerolinea\Create.cshtml" />
     <Content Include="Views\Consecutivo_Aerolinea\Delete.cshtml" />
     <Content Include="Views\Consecutivo_Aerolinea\Details.cshtml" />
     <Content Include="Views\Consecutivo_Aerolinea\Edit.cshtml" />
     <Content Include="Views\Consecutivo_Aerolinea\Index.cshtml" />
-    <Content Include="Views\Cliente\Create.cshtml" />
-    <Content Include="Views\Cliente\Delete.cshtml" />
-    <Content Include="Views\Cliente\Details.cshtml" />
-    <Content Include="Views\Cliente\Edit.cshtml" />
-    <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Consecutivo_Pais\Create.cshtml" />
     <Content Include="Views\Consecutivo_Pais\Delete.cshtml" />
     <Content Include="Views\Consecutivo_Pais\Details.cshtml" />
@@ -647,11 +630,6 @@
     <Content Include="Views\Puerta\Details.cshtml" />
     <Content Include="Views\Puerta\Edit.cshtml" />
     <Content Include="Views\Puerta\Index.cshtml" />
-    <Content Include="Views\Reservar_Boleto\Create.cshtml" />
-    <Content Include="Views\Reservar_Boleto\Delete.cshtml" />
-    <Content Include="Views\Reservar_Boleto\Details.cshtml" />
-    <Content Include="Views\Reservar_Boleto\Edit.cshtml" />
-    <Content Include="Views\Reservar_Boleto\Index.cshtml" />
     <Content Include="Views\Rol\Create.cshtml" />
     <Content Include="Views\Rol\Delete.cshtml" />
     <Content Include="Views\Rol\Details.cshtml" />
@@ -667,6 +645,16 @@
     <Content Include="Views\Vuelo_Salida\Details.cshtml" />
     <Content Include="Views\Vuelo_Salida\Edit.cshtml" />
     <Content Include="Views\Vuelo_Salida\Index.cshtml" />
+    <Content Include="Views\Comprar_Boleto\Create.cshtml" />
+    <Content Include="Views\Comprar_Boleto\Delete.cshtml" />
+    <Content Include="Views\Comprar_Boleto\Details.cshtml" />
+    <Content Include="Views\Comprar_Boleto\Edit.cshtml" />
+    <Content Include="Views\Comprar_Boleto\Index.cshtml" />
+    <Content Include="Views\Reservar_Boleto\Create.cshtml" />
+    <Content Include="Views\Reservar_Boleto\Delete.cshtml" />
+    <Content Include="Views\Reservar_Boleto\Details.cshtml" />
+    <Content Include="Views\Reservar_Boleto\Edit.cshtml" />
+    <Content Include="Views\Reservar_Boleto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

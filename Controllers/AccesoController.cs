@@ -19,7 +19,7 @@ namespace V_VuelosServiciosWeb.Controllers
         {
             try
             {
-                using (Models.servicioswebEntities db = new Models.servicioswebEntities())
+                using (Models.servicioswebEntities1 db = new Models.servicioswebEntities1())
                 {
                     var oUser = (from d in db.USUARIO
                                  where d.EMAIL_USUARIO == usuario.Trim() && d.CLAVE_USUARIO == inputPassword.Trim()
@@ -42,7 +42,7 @@ namespace V_VuelosServiciosWeb.Controllers
 
                 }
 
-                return RedirectToAction("PaginaPrincipalAdmi", "Admin");
+                return RedirectToAction("LogIn", "Admin");
             }
             catch (Exception ex)
             {

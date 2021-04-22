@@ -19,8 +19,8 @@ namespace V_VuelosServiciosWeb.Models
         public Nullable<int> YEAR_TARJETA { get; set; }
         public Nullable<int> CVV_TARJETA { get; set; }
         public string TIPO_TARJETA { get; set; }
-        public Nullable<int> ID_CLIENTEFK { get; set; }
+        public Nullable<int> ID_USUARIOFK { get; set; }
     
-        public virtual CLIENTE CLIENTE { get; set; }
+        public virtual USUARIO USUARIO { get; set; }
     }
 }

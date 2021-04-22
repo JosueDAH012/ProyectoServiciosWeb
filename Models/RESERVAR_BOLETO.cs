@@ -18,8 +18,8 @@ namespace V_VuelosServiciosWeb.Models
         public string BOOKING_ID { get; set; }
         public string CANTIDAD_RESERVAR_BOLETOS { get; set; }
         public string TOTAL_RESERVAR_BOLETO { get; set; }
-        public Nullable<int> ID_CLIENTEFK { get; set; }
+        public Nullable<int> ID_USUARIOFK { get; set; }
     
-        public virtual CLIENTE CLIENTE { get; set; }
+        public virtual USUARIO USUARIO { get; set; }
     }
 }

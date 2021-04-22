@@ -13,10 +13,10 @@ namespace V_VuelosServiciosWeb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class servicioswebEntities : DbContext
+    public partial class servicioswebEntities1 : DbContext
     {
-        public servicioswebEntities()
-            : base("name=servicioswebEntities")
+        public servicioswebEntities1()
+            : base("name=servicioswebEntities1")
         {
         }
     
@@ -27,7 +27,6 @@ namespace V_VuelosServiciosWeb.Models
     
         public virtual DbSet<AEROLINEA> AEROLINEA { get; set; }
         public virtual DbSet<BITACORA> BITACORA { get; set; }
-        public virtual DbSet<CLIENTE> CLIENTE { get; set; }
         public virtual DbSet<COMPRAR_BOLETO> COMPRAR_BOLETO { get; set; }
         public virtual DbSet<CONSECUTIVO_AEROLINEA> CONSECUTIVO_AEROLINEA { get; set; }
         public virtual DbSet<CONSECUTIVO_PAIS> CONSECUTIVO_PAIS { get; set; }
@@ -44,6 +43,5 @@ namespace V_VuelosServiciosWeb.Models
         public virtual DbSet<USUARIO> USUARIO { get; set; }
         public virtual DbSet<VUELO_LLEGADA> VUELO_LLEGADA { get; set; }
         public virtual DbSet<VUELO_SALIDA> VUELO_SALIDA { get; set; }
-        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }
